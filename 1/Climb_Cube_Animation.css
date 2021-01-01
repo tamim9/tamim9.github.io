@@ -1,0 +1,167 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+    transform: rotate(-35deg);
+}
+.container .box
+{
+    position: relative;
+    left: -200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% + 400px);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    animation: animateSurface 1.5s ease-in-out infinite;
+}
+@keyframes animateSurface
+{
+    0%
+    {
+        transform: translateX(0px);
+    }
+    100%
+    {
+        transform: translateX(-200px);
+    }
+}
+.container .box .cube
+{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #03e9f4;
+    box-shadow: 0 0 5px rgba(3, 233, 244, 1),
+    0 0 25px rgba(3, 233, 244, 1),
+    0 0 50px rgba(3, 233, 244, 1),
+    0 0 100px rgba(3, 233, 244, 1),
+    0 0 200px rgba(3, 233, 244, 0.5),
+    0 0 300px rgba(3, 233, 244, 0.5);
+    transform-origin: bottom right;
+    animation: animate 1.5s ease-in-out infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    60%
+    {
+        transform: rotate(90deg);
+    }
+    65%
+    {
+        transform: rotate(85deg);
+    }
+    70%
+    {
+        transform: rotate(90deg);
+    }
+    75%
+    {
+        transform: rotate(87.5deg);
+    }
+    80%, 100%
+    {
+        transform: rotate(90deg);
+    }
+}
+.name
+{
+    color:rgb(244, 228, 3);
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    top: 150px;
+    right: 50px;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0, 0, 0, 0.404));
+    box-shadow: 0 0 5px rgba(244, 228, 3, 0.04),
+    0 0 10px rgba(244, 228, 3, 0.05),
+    0 0 15px rgba(244, 228, 3, 0.06),
+    0 0 20px rgba(244, 228, 3, 0.07);
+    background-color: rgba(244, 228, 3, 0.07);
+    animation: animateName 3s ease-in-out infinite;
+}
+.name2
+{
+    color:rgb(244, 228, 3);
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    top: 150px;
+    left: 100px;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0, 0, 0, 0.404));
+    box-shadow: 0 0 5px rgba(244, 228, 3, 0.04),
+    0 0 10px rgba(244, 228, 3, 0.05),
+    0 0 15px rgba(244, 228, 3, 0.06),
+    0 0 20px rgba(244, 228, 3, 0.07);
+    background-color: rgba(244, 228, 3, 0.07);
+    animation: animateName2 3s ease-in-out infinite;
+}
+@keyframes animateName
+{
+    0%
+    {
+        opacity: 1;
+        right: 34px;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    50.1%
+    {
+        opacity: 1;
+        right: 34px;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+@keyframes animateName2
+{
+    0%
+    {
+        opacity: 0;
+    }
+    48%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    52%
+    {
+        opacity: 0;
+    }
+    99%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
