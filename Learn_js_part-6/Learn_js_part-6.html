@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+        <title>Learn JS part-6</title>
+        <header>Learn JavaScript</header>
+        <div id="headerback">Learn JavaScript</div>
+        <link rel="stylesheet" href="Learn_js_part-6.css">
+        <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="backlogo1">M&emsp;A&emsp;D&emsp;E&emsp;&emsp;B&emsp;Y</div>
+        <div id="backlogo2">T&emsp;A&emsp;M&emsp;I&emsp;M</div>
+        <p id="js_class">
+            <h2>JavaScript Classes</h2>
+            ECMAScript 2015, also known as ES6, intoduced JavaScript Classes.   <br>
+            JavaScript Classes are templates for JavaScript Objects.
+            <p>
+                <h3>JavaScript Class Syntaxx</h3>
+                Use the keyword <span id="highlight">class</span> to create a class.  <br>
+                Always add a method named <span id="highlight">constructor():</span>  <br>
+                Syntax
+                <div id="syntx">
+                    class ClassName {<br>
+                        constructor() { ... }  <br>
+                    }
+                </div>
+                A JavaScript class is not an object.  <br>
+                It is a template for JavaScript objects.
+            </p><br>
+            <p>
+                <h3>Using a Class</h3>
+                When you have a class, you can use the class to create objects:
+                <br>
+                Example
+                <div id="clas">
+                    let myCar1 = new Car("Ford", 2014);  <br>
+                    let myCar2 = new Car("Audi", 2019);
+                </div>
+                Output:
+                <div id="clasout1"></div>
+                The example above uses the Car class to create two Car objects.  <br>
+                The constructor method is called automatically when a new object is created.
+            </p><br>
+            <p>
+                <h3>The Constructor Method</h3>
+                The constructor method is a special method:
+                <ul>
+                    <li>It has to have the exact name "constructor"</li>
+                    <li>It is executed automatically when a new object is created</li>
+                    <li>It is used to initialized object properties</li>
+                </ul>
+                It if you do not define a constructor method, JavaScript will add an empty constructor method.
+            </p><br>
+            <p>
+                <h3>Class Methods</h3>
+                Class methods are created with the same syntax as object methods.  <br>
+                Use the keyword <span id="highlight">class</span>  <br>
+                Always add a <span id="highlight">constructor()</span> method.  <br>
+                Then add any number of methods.  <br>
+                Syntax
+                <div id="clas">
+                    class ClassName {  <br>
+                        constructor() { ... }  <br>
+                        method_1() { ... }  <br>
+                        method_2() { ... }  <br>
+                        method_3() { ... }  <br>
+                    }
+                </div>
+                Create a Class method named "age", that returns the Car age:  <br>
+                Example
+                <div id="clas">
+                    class Car {  <br>
+                        constructor(name, year) {  <br>
+                            this.name = name;  <br>
+                            this.year = year;  <br>
+                        }  <br>
+                        age() {  <br>
+                            let date = new Date(); <br>
+                            return date.getFullYear() - this.year;  <br>
+                        }  <br>
+                    }   <br>
+                    let myCar = new Car("Ford", 2014);  <br>
+                    document.getElementById('output').innerHTML =  <br>
+                    "My car is " + myCar.age() + " years old.";
+                </div>
+                Output:
+                <div id="clasout2"></div>
+                You can send parameters to Class methods:   <br>
+                Example
+                <div id="clas">
+                    class Car {  <br>
+                        constructor(name, year) {  <br>
+                            this.name = name;  <br>
+                            this.year = year;  <br>
+                        }  <br>
+                        age(x) {  <br>
+                            return x - this.year;  <br>
+                        }  <br>
+                    }   <br>
+                    let date = new Date();  <br>
+                    let year = date.getFullYear();  <br>
+                    let myCar = new Car("Ford", 2014);  <br>
+                    document.getElementById('output').innerHTML =  <br>
+                    "My car is " + myCar.age(year) + " years old.";
+                </div>
+                Output:
+                <div id="clasout3"></div>
+            </p>
+        </p>
+        <hr>
+        <br>
+        <p id="js_debug">
+            <h2>JavaScript Debugging</h2>
+            Errors can (will) happen, every time you write some new computer code.
+            <p>
+                <h3>Code Debugging</h3>
+                Programming code might contain syntax errors, or logical errors.  <br>
+                Many of these errors are difficult to diagnose.  <br>
+                Often when programming code contains errors, nothing will happen. There are no error messages, and you will go no indications where to search for errors.   <br>
+                Searching for (and fixing) errors in programming code is called code debugging.
+            </p><br>
+            <p>
+                <h3>JavaScript Debuggers</h3>
+                Debugging is not easy. But fortunately, all modern browsers have a built-in JavaScript debugger.   <br>
+                Built-in debuggers can be turned on and off, forcing errors to be reported to the user.  <br>
+                With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.  <br>
+                Normally, otherwise follow the steps at the bottom of this page, you active debugging in your browser with the F12 key, and select "Console" in the debugger menu.
+            </p><br>
+            <p>
+                <h3>The console.log() Method</h3>
+                If your browser supports debugging, you can use <span id="highlight">console.log()</span> to display JavaScript values in the debugger window:  <br>
+                Example
+                <div id="debug">
+                    a = 5;   <br>
+                    b = 6;   <br>
+                    c = a + b;  <br>
+                    console.log(c);
+                </div>
+                Press F12 to see the output.
+            </p><br>
+            <p>
+                <h3>Setting Breakpoints</h3>
+                In the debugger window, you can set breakpoints in the JavaScript code.  <br>
+                At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.  <br>
+                After examining values, you can resume the execution of code (typically with a play button).
+            </p><br>
+            <p>
+                <h3>The debugger Keyword</h3>
+                The <span id="highlight">debugger</span> keyword stops the execution of JavaScript, and calls (if available) the debugging function.   <br>
+                This has the same function as setting a breakpoint in the debugger.  <br>
+                If no debugging is available, the debugger statement has no effect.  <br>
+                With the debugger turned on, this code will stop executing before it executed the third line.  <br>
+                Example
+                <div id="debug">
+                    var x = 15 * 5;  <br>
+                    debugger;  <br>
+                    document.getElementById('output').innerHTML = x;
+                </div>
+                Output:
+                <div id="debugout"></div>
+            </p>
+        </p>
+        <hr>
+        <br>
+        <p id="js_performance">
+            <h2>JavaScript Performance</h2>
+            How to speed up your JavaScript code.
+            <p>
+                <h3>Reduce Activity in Loops</h3>
+                Loops are often used in programming. <br>
+                Each statement in a loop, including the for statement, is executed for each iteration of the loop.  <br>
+                Statements or assignments that can be placed outside the loop will make the loop run faster.  <br>
+                Bad:
+                <div id="syntx">
+                    var i;  <br>
+                    for (i = 0; i < arr.length; i++) { ... }
+                </div>
+                Better Code:
+                <div id="syntx">
+                    var i;  <br>
+                    var l = arr.length;  <br>
+                    for (i = 0; i < l; i++) { ... }
+                </div>
+                The bad code accesses the length property of an array each time the loop is iterated.  <br>
+                The better code accesses the length property outside the loop and makes the loop run faster.
+            </p><br>
+            <p>
+                <h3>Reduce DOM Access</h3>
+                Accessing the HTML DOM is very slow, compared to other JavaScript statements.  <br>
+                If you expect to access a DOM element several times, access it once, and use it as a local variable:  <br>
+                Example
+                <div id="speedup">
+                    var obj; <br>
+                    obj = document.getElementById("output"); <br>
+                    obj.innerHTML = "Hello";
+                </div>
+                Output:
+                <div id="speedup1"></div>
+            </p><br>
+            <p>
+                <h3>Reduce DOM Size</h3>
+                Keep the number of elements in the HTML DOM small. <br>
+                This will always improve page loading, and speed up rendering (page display), especially on smaller devices. <br>
+                Every attempt to search the DOM (like getElementByTagName) will benefit from a smaller DOM.
+            </p><br>
+            <p>
+                <h3>Avoid Unnecessary Variables</h3>
+                Don't create new variables if you don't plan to save values. <br>
+                Often you can replace code like this:
+                <div id="syntx">
+                    var fullName = firstName + " " + lastName; <br>
+                    document.getElementById("output").innerHTML = fullName;
+                </div>
+                With this:
+                <div id="syntx">
+                    document.getElementById("output").innerHTML = firstName + " " + lastName;
+                </div>
+            </p><br>
+            <p>
+                <h3>Delay JavaScript Loading</h3>
+                Putting your scripts at the bottom of the page body lets the browser load the page first. <br>
+                While a script is downloading, the browser will not start any other downloads. In addition all parsing and rendering activity might be blocked.  <br>
+                <span style="color: yellow;">The HTTP specification defines that browsers should not download more than two components in parallel.</span>
+                <br>
+                An alternative is to use <span id="highlight">defer="true"</span> in the script tag. The defer attribute specifies that the script should be executed after the page has finished parsing, but it only works for external scripts.  <br>
+                If possible, you can add your script to the page by code, after the page has loaded:  <br>
+                Example
+                <div id="speedup">
+                    window.onload = function() { <br>
+                        var element = document.createElement("script"); <br>
+                        element.src = "myScript.js";  <br>
+                        document.body.appendChild(element);  <br>
+                    };
+                </div>
+            </p> <br>
+            <p>
+                <h3>Avoid Using with</h3>
+                Avoid using the <span id="highlight">with</span> keyword. It has a negative effect on speed. It also clutters up JavaScript scopes.  <br>
+                The <span id="highlight">with</span> keyword is not allowed in strict mode.
+            </p>
+        </p>
+        <hr>
+        <br>
+        <p id="js_reserveWord">
+            <h2>JavaScript Reserved Words</h2>
+            In JavaScript you cannot use these reserved words as variables, labels, or function names:
+            <table>
+                <tr>
+                    <td>abstract</td>
+                    <td>arguments</td>
+                    <td>await*</td>
+                    <td>boolean</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>break</td>
+                    <td>byte</td>
+                    <td>case</td>
+                    <td>catch</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>class*</td>
+                    <td>const</td>
+                    <td>continue</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>debugger</td>
+                    <td>default</td>
+                    <td>delete</td>
+                    <td>do</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>else</td>
+                    <td>enum*</td>
+                    <td>eval</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>export*</td>
+                    <td>extends*</td>
+                    <td>false</td>
+                    <td>final</td>
+                </tr>
+                <tr>
+                    <td>finally</td>
+                    <td>float</td>
+                    <td>for</td>
+                    <td>function</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>goto</td>
+                    <td>if</td>
+                    <td>implements</td>
+                    <td>import*</td>
+                </tr>
+                <tr>
+                    <td>in</td>
+                    <td>instanceof</td>
+                    <td>int</td>
+                    <td>interface</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>let*</td>
+                    <td>long</td>
+                    <td>native</td>
+                    <td>new</td>
+                </tr>
+                <tr>
+                    <td>null</td>
+                    <td>package</td>
+                    <td>private</td>
+                    <td>protected</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>public</td>
+                    <td>return</td>
+                    <td>short</td>
+                    <td>static</td>
+                </tr>
+                <tr>
+                    <td>super*</td>
+                    <td>switch</td>
+                    <td>synchronized</td>
+                    <td>this</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>throw</td>
+                    <td>throws</td>
+                    <td>transient</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>try</td>
+                    <td>typeof</td>
+                    <td>var</td>
+                    <td>void</td>
+                </tr>
+                <tr id="trinvert">
+                    <td>volatile</td>
+                    <td>while</td>
+                    <td>with</td>
+                    <td>yield</td>
+                </tr>
+            </table>
+            Words marked with * are new in ECMAScript 5 and 6.
+            <p>
+                <h3>Removed Reserved Words</h3>
+                The following reserved words have been removed from the ECMAScript 5/6 standard:
+                <table>
+                    <tr>
+                        <td>abstract</td>
+                        <td>boolean</td>
+                        <td>byte</td>
+                        <td>char</td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>final</td>
+                        <td>float</td>
+                        <td>goto</td>
+                    </tr>
+                    <tr>
+                        <td>int</td>
+                        <td>long</td>
+                        <td>native</td>
+                        <td>short</td>
+                    </tr>
+                    <tr>
+                        <td>synchronized</td>
+                        <td>throws</td>
+                        <td>transient</td>
+                        <td>volatile</td>
+                    </tr>
+                </table>
+                Do not use these words as variables. ECMAScript 5/6 does not have full support in all browsers.
+            </p><br>
+            <p>
+                <h3>JavaScript Objects, Properties, and Methods</h3>
+                <table>
+                    <caption>You should also avoid using the name of JavaScript built-in objects, properties, and methods:</caption>
+                    <tr id="trinvert">
+                        <td>Array</td>
+                        <td>Date</td>
+                        <td>eval</td>
+                        <td>function</td>
+                    </tr>
+                    <tr>
+                        <td>hasOwnProperty</td>
+                        <td>Infinity</td>
+                        <td>isFinite</td>
+                        <td>isNaN</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>isPrototypeOf</td>
+                        <td>length</td>
+                        <td>Math</td>
+                        <td>NaN</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>Number</td>
+                        <td>Object</td>
+                        <td>prototype</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>String</td>
+                        <td>toString</td>
+                        <td>undefined</td>
+                        <td>valueOf</td>
+                    </tr>
+                </table>
+            </p><br>
+            <p>
+                <h3>Java Reserved Words</h3>
+                JavaScript is often used together with Java. You should avoid using some Java objects and properties as JavaScript identifiers:
+                <table>
+                    <tr>
+                        <td>getClass</td>
+                        <td>java</td>
+                        <td>JavaArray</td>
+                        <td>javaClass</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>JavaObject</td>
+                        <td>JavaPackage</td>
+                    </tr>
+                </table>
+            </p><br>
+            <p>
+                <h3>Other Reserved Words</h3>
+                JavaScript can be used as the programming language in many applications. <br>
+                You should also avoid using the name of HTML and Window objects and properties:
+                <table>
+                    <tr>
+                        <td>alert</td>
+                        <td>all</td>
+                        <td>anchor</td>
+                        <td>anchors</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>area</td>
+                        <td>assign</td>
+                        <td>blur</td>
+                        <td>button</td>
+                    </tr>
+                    <tr>
+                        <td>checkbox</td>
+                        <td>clearInterval</td>
+                        <td>clearTimeout</td>
+                        <td>clientInformation</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>close</td>
+                        <td>closed</td>
+                        <td>confirm</td>
+                        <td>constructor</td>
+                    </tr>
+                    <tr>
+                        <td>crypto</td>
+                        <td>decodeURI</td>
+                        <td>decodeURIComponent</td>
+                        <td>defaultStatus</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>document</td>
+                        <td>element</td>
+                        <td>elements</td>
+                        <td>embed</td>
+                    </tr>
+                    <tr>
+                        <td>embeds</td>
+                        <td>encodeURI</td>
+                        <td>encodeURIComponent</td>
+                        <td>escape</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>event</td>
+                        <td>fileUpload</td>
+                        <td>focus</td>
+                        <td>form</td>
+                    </tr>
+                    <tr>
+                        <td>forms</td>
+                        <td>frame</td>
+                        <td>innerHeight</td>
+                        <td>innerWidth</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>layer</td>
+                        <td>layers</td>
+                        <td>link</td>
+                        <td>location</td>
+                    </tr>
+                    <tr>
+                        <td>mimeTypes</td>
+                        <td>navigate</td>
+                        <td>navigator</td>
+                        <td>frames</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>frameRate</td>
+                        <td>hidden</td>
+                        <td>history</td>
+                        <td>image</td>
+                    </tr>
+                    <tr>
+                        <td>images</td>
+                        <td>offscreenBuffering</td>
+                        <td>open</td>
+                        <td>opener</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>option</td>
+                        <td>outerHeight</td>
+                        <td>outerWidth</td>
+                        <td>packages</td>
+                    </tr>
+                    <tr>
+                        <td>pageXOffset</td>
+                        <td>pageYOffset</td>
+                        <td>parent</td>
+                        <td>parseFloat</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>parseInt</td>
+                        <td>password</td>
+                        <td>pkcs11</td>
+                        <td>plugin</td>
+                    </tr>
+                    <tr>
+                        <td>prompt</td>
+                        <td>propertyIsEnum</td>
+                        <td>radio</td>
+                        <td>reset</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>screenX</td>
+                        <td>screenY</td>
+                        <td>scroll</td>
+                        <td>secure</td>
+                    </tr>
+                    <tr>
+                        <td>select</td>
+                        <td>self</td>
+                        <td>setInterval</td>
+                        <td>setTimeout</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>status</td>
+                        <td>submit</td>
+                        <td>taint</td>
+                        <td>text</td>
+                    </tr>
+                    <tr>
+                        <td>textarea</td>
+                        <td>top</td>
+                        <td>unescape</td>
+                        <td>untaint</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>window</td>
+                    </tr>
+                </table>
+            </p><br>
+            <p>
+                <h3>HTML Event Handlers</h3>
+                In addition you should avoid using the name of all HTML event handlers. <br>
+                Examples:
+                <table>
+                    <tr id="trinvert">
+                        <td>onblur</td>
+                        <td>onclick</td>
+                        <td>onerror</td>
+                        <td>onfocus</td>
+                    </tr>
+                    <tr>
+                        <td>onkeydown</td>
+                        <td>onkeypress</td>
+                        <td>onkeyup</td>
+                        <td>onmouseover</td>
+                    </tr>
+                    <tr id="trinvert">
+                        <td>onload</td>
+                        <td>onmouseup</td>
+                        <td>onmousedown</td>
+                        <td>onsubmit</td>
+                    </tr>
+                </table>
+            </p>
+        </p>
+        <hr>
+        <br>
+        <p id="js_json">
+            <h2>JavaScript JSON</h2>
+            JSON is a format for storing and transporting data. <br>
+            JSON is often used when data is sent from a server to a web page.
+            <p>
+                <h3>What is JSON?</h3>
+                <ul>
+                    <li>JSON stands for <b id="highlight">J</b>ava<b id="highlight">S</b>cript <b id="highlight">O</b>bject <b id="highlight">N</b>otation</li>
+                    <li>JSON is a lightweight data interchange format</li>
+                    <li>JSON is language independent *</li>
+                    <li>JSON is "self-describing" and easy to understand</li>
+                </ul>
+                * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+            </p><br>
+            <p>
+                <h3>JSON Example</h3>
+                This JSON syntax defines an employees object: an array of 3 employee records (objects):
+                <br>
+                JSON Example
+                <div id="json">
+                    {<br>
+                        "employees":[<br>
+                        {"firstName":"John", "lastName":"Doe"}, <br>
+                        {"firstName":"Anna", "lastName":"Smith"}, <br>
+                        {"firstName":"Peter", "lastName":"Jones"} <br>
+                        ] <br>
+                    }
+                </div>
+            </p><br>
+            <p>
+                <h3>The JSON Format Evaluates to JavaScript Objects</h3>
+                The JSON format is syntactically identical to the code for creating JavaScript objects. <br>
+                Because of this similarly, a JavaScript program can easily convert JSON data into native JavaScript objects.
+            </p><br>
+            <p>
+                <h3>JSON Syntax Rules</h3>
+                <ul>
+                    <li>Data is in name/value pairs</li>
+                    <li>Data is separated by commas</li>
+                    <li>Curly braces hold objects</li>
+                    <li>Square brackets hold arrays</li>
+                </ul>
+            </p><br>
+            <p>
+                <h3>JSON Data - A Name and a Value</h3>
+                JSON data is written as name/value pairs, just like JavaScript object properties. <br>
+                A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value:
+                <div id="syntx">
+                    "firstName":"John"
+                </div>
+                JSON names require double quotes, JavaScript names do not.
+            </p><br>
+            <p>
+                <h3>JSON Objects</h3>
+                JSON objects are written inside curly braces. <br>
+                Just like in JavaScript, objects can contain multiple name/value pairs:
+                <div id="syntx">
+                    {"firstName":"John", "lastName":"Doe"}
+                </div>
+            </p><br>
+            <p>
+                <h3>JSON Arrays</h3>
+                JSON arrays are written inside square brackets. <br>
+                Just like in JavaScript, an array can contain objects:
+                <div id="syntx">
+                    "employees":[ <br>
+                    {"firstName":"John", "lastName":"Doe"}, <br>
+                    {"firstName":"Anna", "lastName":"Smith"}, <br>
+                    {"firstName":"Peter", "lastName":"Jones"} <br>
+                    ]
+                </div>
+                In the example above, the object "employees" is an array. It contains three objects. <br>
+                Each object is a record of a person (with a first name and a last name).
+            </p><br>
+            <p>
+                <h3>Converting a JSON Text to a JavaScript Object</h3>
+                A common use of JSON is to read data from a web server, and display the data in a web page. <br>
+                For simplicity, this can be demonstrated using a string as input. <br>
+                First, create a JavaScript string containing JSON syntax:
+                <div id="syntx">
+                    var text = '{"employees" : [' + <br>
+                    '{ "firstName":"John" , "lastName":"Doe" },' + <br>
+                    '{ "firstName":"Anna" , "lastName":"Smith" },' + <br>
+                    '{ "firstName":"Peter", "lastName":"Jones" } ]}';
+                </div>
+                Then, use the JavaScript built-in function <span id="highlight">JSON.parse()</span> to convert the string into a JavaScript object:
+                <div id="syntx">
+                    var obj = JSON.parse(text);
+                </div>
+                Finally, use the new JavaScript object in your page: <br>
+                Example
+                <div id="json">
+                    document.getElementById("output").innerHTML = <br>
+                    obj.employees[1].firstName + " " + obj.employees[1].lastName;
+                </div>
+                Output:
+                <div id="jsonout"></div>
+            </p>
+        </p>
+
+
+
+
+
+
+
+        <br id="down">
+
+        <a id="topbut" href="#js_class">Go to Top</a>
+        <a id="downbut" href="#down">Go to Bottom</a>
+        <span id="time"></span>
+        <script>
+            function showdate() {
+                let date = new Date();
+                document.getElementById('time').innerHTML = date.toLocaleTimeString();
+            }
+            setInterval(showdate, 1);
+        </script>
+
+    </body>
+    <script src="Learn_js_part-6.js"></script>
+</html>

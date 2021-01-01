@@ -1,0 +1,153 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
+header {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: lawngreen;
+    font-size: 90px;
+    position: sticky;
+    text-align: center;
+    top: 8px;
+    z-index: 2;
+}
+header:hover {
+    background-color: lawngreen;
+    color: black;
+    font-size: 100px;
+    cursor: not-allowed;
+}
+#headerback {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 8px;
+    font-size: 90px;
+    filter: blur(40px);
+    z-index: 1;
+}
+
+#backlogo1 {
+    z-index: -100;
+    position: fixed;
+    text-align: center;
+    font-family: Henny Penny;
+    width: 100%;
+    bottom: 30%;
+    margin: auto;
+    font-size: 30px;
+    opacity: 20%;
+}
+
+#backlogo2 {
+    z-index: -100;
+    position: fixed;
+    text-align: center;
+    font-family: Dancing Script;
+    width: 100%;
+    bottom: 10%;
+    margin: auto;
+    font-size: 100px;
+    opacity: 20%;
+}
+@media screen and (max-width: 900px) {
+    #backlogo1 {font-size: 20px;}
+    #backlogo2 {font-size: 50px;}
+}
+@media screen and (max-width: 650px) {
+    #backlogo1 {font-size: 15px;}
+    #backlogo2 {font-size: 30px;}
+}
+
+
+
+table {border: 1px solid lightseagreen; width: 100%;}
+thead {background-color: aqua;}
+#trinvert {background-color: rgba(255, 255, 255, 0.061);}
+
+#highlight {color: yellow; background-color: rgb(29, 29, 29);}
+#comment {opacity: 60%;}
+
+
+#topbut {
+    color: yellow;
+    text-decoration: none;
+    font-size: large;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+#downbut {
+    color: yellow;
+    font-size: large;
+    text-decoration: none;
+    position: fixed;
+    right: 20px;
+    top: 130px;
+}
+#topbut:hover, #downbut:hover {
+    text-decoration: underline;
+}
+#time {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    font-size: 30px;
+    font-family: Dancing Script;
+    text-align: center;
+    color: darkcyan;
+    padding: 25px;
+    height: 70px;
+    width: 100px;
+    border-radius: 50%;
+    animation: timeani;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes timeani {
+    0%{background-image: linear-gradient(0deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    5%{background-image: linear-gradient(18deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    10%{background-image: linear-gradient(36deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    15%{background-image: linear-gradient(54deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    20%{background-image: linear-gradient(72deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    25%{background-image: linear-gradient(90deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    30%{background-image: linear-gradient(108deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    35%{background-image: linear-gradient(126deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    40%{background-image: linear-gradient(144deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    45%{background-image: linear-gradient(162deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    50%{background-image: linear-gradient(180deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    55%{background-image: linear-gradient(-162deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    60%{background-image: linear-gradient(-144deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    65%{background-image: linear-gradient(-126deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    70%{background-image: linear-gradient(-108deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    75%{background-image: linear-gradient(-90deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    80%{background-image: linear-gradient(-72deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    85%{background-image: linear-gradient(-54deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    90%{background-image: linear-gradient(-36deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    95%{background-image: linear-gradient(-18deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    100%{background-image: linear-gradient(0deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+}
+
+
+#syntx {
+    color: black;
+    background-color:springgreen;
+    width: 800px;
+}
+
+#clas, #debug, #speedup, #json {
+    color: black;
+    background-color: violet;
+    width: 800px;
+}
+
+#clasout1, #clasout2, #clasout3, #debugout, #speedup1, #jsonout {
+    color: black;
+    background-color: thistle;
+    width: 800px;
+}
