@@ -469,10 +469,12 @@ img{
     .home__img{
         right: 15%;
         bottom: 20%;
+        width: 500px;
     }
 }
 @media screen and (min-width: 1700px) {
     .home__img{
         right: 20%;
+        width: 550px;
     }
 }
