@@ -19,7 +19,7 @@
     --h2-font-size: 1.25rem;
     --normal-font-size: 0.938rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 810px) {
     :root{
         --big-font-size: 3.5rem;
         --h2-font-size: 2rem;
@@ -130,7 +130,7 @@ img{
     align-items: center;
     font-weight: var(--font-semi);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 810px) {
     .nav__menu{
         position: fixed;
         top: var(--header-height);
@@ -169,6 +169,15 @@ img{
     font-size: 1.5rem;
     cursor: pointer;
 }
+#nav-name{
+    font-size: 20px;
+    animation: nameAni 4s ease-in-out infinite;
+    color: black;
+}
+@keyframes nameAni {
+    0%, 100%{color: black;}
+    50% {color: var(--first-color)}
+}
 
 
 /*Active menu*/
@@ -197,8 +206,11 @@ img{
     align-self: center;
 }
 .home__title{
-    font-size: var(--big-font-size);
+    font-size: 2rem;
     margin-bottom: var(--mb-5);
+}
+@media screen and (min-width: 500px){
+    .home__title{font-size: 3.5rem;}
 }
 .home__title-color{
     color: var(--first-color);
@@ -380,7 +392,7 @@ img{
 
 
 /* ===== MEDIA QUERIES ===== */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 810px) {
     body{
         margin: 0;
     }
@@ -412,6 +424,9 @@ img{
     }
     .nav__link{
         color: var(--second-color);
+    }
+    #nav-name{
+        font-size: 30px;
     }
 
     .home{
