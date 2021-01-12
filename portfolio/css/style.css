@@ -437,12 +437,13 @@ img{
 /* ===== FOOTER ===== */
 .footer{
     background-color: var(--second-color);
-    color: #fff;
+    color: rgba(255, 255, 255, 0.65);
     text-align: center;
     font-weight: var(--font-semi);
     padding: 2rem 0;
 }
 .footer__title{
+    color: rgba(255, 255, 255, 0.89);
     font-size: 2rem;
     margin-bottom: var(--mb-4);
 }
@@ -451,8 +452,11 @@ img{
 }
 .footer__icon{
     font-size: 1.5rem;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.65);
     margin: 0 var(--mb-2);
+}
+.footer__icon:hover{
+    color: #fff;
 }
 
 
