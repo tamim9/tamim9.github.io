@@ -28,6 +28,7 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'bottom',
@@ -39,7 +40,7 @@ const sr = ScrollReveal({
 
 /*SCROLL HOME*/
 sr.reveal('.home__title',{})
-sr.reveal('.button',{delay: 200})
+sr.reveal('.home__button',{delay: 200})
 sr.reveal('.home__img',{delay: 400})
 sr.reveal('.home__social-icon',{interval: 200})
 
