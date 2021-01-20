@@ -502,11 +502,12 @@ img{
     font-size: 1.7rem;
     margin-bottom: var(--mb-1);
 }
-.footer__contact{
+.footer__subtitle{
     color:rgba(255, 255, 255, 0.65);
     font-size: 0.9rem;
     position: relative;
     top: -15px;
+    letter-spacing: 3px;
 }
 .footer__social{
     margin-bottom: var(--mb-4);
@@ -618,7 +619,7 @@ img{
     .footer__title{
         font-size: 2.1rem;
     }
-    .footer__contact{
+    .footer__subtitle{
         font-size: 1rem;
     }
     .footer__icon{
