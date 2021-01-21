@@ -259,7 +259,7 @@ img{
     align-self: center;
 }
 .home__title{
-    font-size: 2rem;
+    font-size: var(--big-font-size);
     margin-bottom: var(--mb-5);
 }
 @media screen and (min-width: 500px){
@@ -427,13 +427,13 @@ img{
     z-index: var(--z-back);
 }
 .skills__html{
-    width: 95%;
-}
-.skills__css{
     width: 85%;
 }
+.skills__css{
+    width: 70%;
+}
 .skills__js{
-    width: 60%;
+    width: 50%;
 }
 .skills__bn{
     width: 95%;
