@@ -422,7 +422,7 @@ img{
     margin-bottom: var(--mb-2);
     opacity: 0;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 80, 0, 1);
-    transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.5s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.5s;
+    transition: opacity 2s cubic-bezier(0.5, 0, 0, 1), transform 2s cubic-bezier(0.5, 0, 0, 1);
 }
 .skills__subtitle.in-viewport-once{
     opacity: 1;
