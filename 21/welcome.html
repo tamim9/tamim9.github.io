@@ -39,8 +39,8 @@
     }
     #welcome{
         font-family: 'Josefin Sans', sans-serif;
-        letter-spacing: 10px;
-        font-size: 4rem;
+        letter-spacing: 7px;
+        font-size: 3rem;
         transform: scale(0.6);
         animation: welcomeani 1s linear forwards 1s;
     }
@@ -65,6 +65,10 @@
     @keyframes madeByani {
         0%{opacity: 1;}
         100%{opacity: 0;}
+    }
+
+    @media screen and (min-width: 768px) {
+        #welcome{font-size: 5rem; letter-spacing: 3rem;}
     }
 
 </style>
