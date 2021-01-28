@@ -255,7 +255,6 @@ img{
 }
 .home__social-icon:hover{
     color: var(--first-color);
-    text-shadow: 1px 1px 4px #00000080;
 }
 .home__img{
     position: absolute;
