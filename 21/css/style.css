@@ -129,6 +129,21 @@ img{
     box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
+/*===== Top Button =====*/
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 3px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    color: rgba(47, 79, 79, 0.9);
+}
+
 
 
 /*===== NAV =====*/
@@ -589,6 +604,17 @@ img{
     .section-title::after{
         width: 80px;
         top: 3rem;
+    }
+
+    #topBtn{
+        right: 15px;
+        bottom: 20px;
+        font-size: 40px;
+        color: rgba(47, 79, 79, 0.7);
+    }
+
+    #topBtn:hover {
+        color: rgb(47, 79, 79);
     }
 
     .nav{
