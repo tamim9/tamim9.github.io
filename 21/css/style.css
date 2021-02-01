@@ -1,5 +1,6 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /*===== VARIABLES CSS =====*/
 :root{
     --header-height: 3rem;
@@ -350,6 +351,8 @@ img{
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 .about__details{
+    font-family: 'Noto Sans', 'Poppins', sans-serif;
+    letter-spacing: 1px;
     opacity: 0;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 80, 0, 1);
     transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.5s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.5s;
