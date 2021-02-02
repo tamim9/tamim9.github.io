@@ -361,6 +361,14 @@ img{
     opacity: 1;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
+.bncd_link{
+    text-decoration: underline;
+    color: var(--second-color);
+}
+.bncd_link:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 195);
+}
 
 
 /* ===== EDUCATION ===== */
@@ -618,6 +626,9 @@ img{
     .section-title::after{
         width: 80px;
         top: 3rem;
+    }
+    .section-subtitle{
+        font-size: 1.2rem;
     }
 
     #topBtn{
