@@ -249,8 +249,9 @@ img{
     .home__title{font-size: 3.5rem;}
 }
 .home__title-color{
+    letter-spacing: 2px;
     color: var(--first-color);
-    text-shadow: 3px 3px 5px #00000066;
+    text-shadow: 2px 2px 5px #00000066;
 }
 .home__social{
     display: flex;
