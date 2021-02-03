@@ -8,7 +8,8 @@ const showMenu = (toggleId, navId, navbg) => {
         toggle.addEventListener('click', ()=>{
             nav.classList.toggle('show')
             toggle.classList.toggle('clicked-toggle')
-            navBack.classList.toggle('visible')
+            navBack.classList.toggle('show')
+            document.body.classList.toggle('scroll-off')
         })
     }
 }
@@ -19,6 +20,9 @@ showMenu('nav-toggle','nav-menu','nav-back')
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction() {
+    // Turn on scrooling
+    document.body.classList.remove('scroll-off')
+    
     // Active link
     navLink.forEach(n => n.classList.remove('active'))
     this.classList.add('active')
@@ -33,7 +37,7 @@ function linkAction() {
 
     // Remove Nav back
     const navBack = document.getElementById('nav-back')
-    navBack.classList.remove('visible')
+    navBack.classList.remove('show')
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
