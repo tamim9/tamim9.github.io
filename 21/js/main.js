@@ -1,15 +1,18 @@
 /*===== MENU SHOW =====*/
-const showMenu = (toggleId, navId) => {
+const showMenu = (toggleId, navId, navbg) => {
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+    nav = document.getElementById(navId),
+    navBack = document.getElementById(navbg)
 
     if(toggle && nav) {
         toggle.addEventListener('click', ()=>{
             nav.classList.toggle('show')
+            toggle.classList.toggle('clicked-toggle')
+            navBack.classList.toggle('visible')
         })
     }
 }
-showMenu('nav-toggle','nav-menu')
+showMenu('nav-toggle','nav-menu','nav-back')
 
 
 /*===== ACTIVE AND REMOVE MENU =====*/
@@ -23,6 +26,14 @@ function linkAction() {
     // Remove menu mobile
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show')
+
+    // Remove NAV toggle button
+    const navToggle = document.getElementById('nav-toggle')
+    navToggle.classList.remove('clicked-toggle')
+
+    // Remove Nav back
+    const navBack = document.getElementById('nav-back')
+    navBack.classList.remove('visible')
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
