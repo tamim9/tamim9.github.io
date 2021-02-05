@@ -525,6 +525,8 @@ img{
     margin-bottom: var(--mb-4);
 }
 .skills__data{
+    background: linear-gradient(to right bottom, rgb(229, 255, 222), rgb(182, 255, 203), rgb(106, 255, 210));
+    backdrop-filter: blur(100px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -533,7 +535,7 @@ img{
     padding: 0.5rem 1rem;
     margin-bottom: var(--mb-4);
     border-radius: 0.5rem;
-    box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    box-shadow: 0 4px 25px rgba(14, 36, 49, 0.3);
     opacity: 0;
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 80, 0, 1);
     transition: opacity 2s cubic-bezier(0.5, 0, 0, 1), transform 2s cubic-bezier(0.5, 0, 0, 1);
