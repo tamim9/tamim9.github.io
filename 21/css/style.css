@@ -525,7 +525,7 @@ img{
     margin-bottom: var(--mb-4);
 }
 .skills__data{
-    background: linear-gradient(to right bottom, rgb(229, 255, 222), rgb(182, 255, 203), rgb(106, 255, 210));
+    background: linear-gradient(to right bottom, rgb(229, 255, 222), rgb(255, 255, 226), rgb(231, 231, 231));
     backdrop-filter: blur(100px);
     display: flex;
     justify-content: space-between;
@@ -564,7 +564,7 @@ img{
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: var(--first-color);
+    background: linear-gradient(to right, rgb(0, 190, 95), rgb(0, 200, 226), rgb(0, 98, 255));
     height: 0.25rem;
     border-radius: 0.5rem;
     z-index: var(--z-back);
