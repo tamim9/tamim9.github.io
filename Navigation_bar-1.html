@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="shortcut icon" href="https://by3302files.storage.live.com/y4mjnK4C3r2VUbvAWqzqgIhEfkYN2Vyefof9KyCeiblTUKB5NhegWlA6KC0b0lFaBtLaB8CzN7zHUtIQDXEVpoVbyvmOyXKI8LLzoCM2brcYKxWztH_GGImAR3uuQRrJcCgQPLbg1cMehP5AlnRUBHfV0vmq52iK3t4xZWmbeTUGFN2w57jemZwI0BAwxhZodls?width=70&height=70&cropmode=none" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav__logo">SAIFUR RAHMAN</div>
+            <ul class="nav__list" id="nav-list">
+                <li class="nav__item active">
+                    <a href="#" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Shop</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">About Us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Contact Us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Account</a>
+                </li>
+            </ul>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <div class="toggle__bar bar1"></div>
+                <div class="toggle__bar bar2"></div>
+                <div class="toggle__bar bar3"></div>
+            </div>
+        </nav>
+    </header>
+</body>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --global-color: #8BC34A;
+        --header-height: 3rem;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3rem;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    }
+    nav{
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav__logo{
+        color: var(--global-color);
+        font-size: 1.3em;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+    @media screen and (max-width: 767px){
+        .nav__list{
+            visibility: hidden;
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style-type: none;
+            background-color: rgba(211, 211, 211, 0.3);
+            border-bottom: 1px dashed rgba(0, 100, 0, 0.5);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: 300ms ease;
+        }
+    }
+    .nav__item{
+        padding: 5px 0;
+        cursor: pointer;
+    }
+    .nav__item.active{
+        background-color: var(--global-color);
+    }
+    .nav__link{
+        font-size: 1.4em;
+        color: var(--global-color);
+        text-decoration: none;
+    }
+    .nav__item.active .nav__link{
+        color: white;
+    }
+    .nav__toggle{
+        margin-right: 0.5em;
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+    }
+    .toggle__bar{
+        background-color: darkgreen;
+        width: 20px;
+        height: 2px;
+        transition: 400ms ease;
+    }
+    .toggle__bar.bar2{
+        margin: 4.5px 0;
+    }
+    /*show menu mobile*/
+    .nav__list.active{
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    .nav__toggle.active{
+        height: 15px;
+    }
+    .nav__toggle.active .bar1{
+        width: 25px;
+        margin-bottom: 9px;
+        transform: rotateZ(45deg);
+        transform-origin: top left;
+    }
+    .nav__toggle.active .bar2{
+        opacity: 0;
+    }
+    .nav__toggle.active .bar3{
+        width: 25px;
+        transform: rotateZ(-45deg);
+        transform-origin: bottom left;
+    }
+
+
+    @media screen and (min-width: 768px){
+        header{
+            height: auto;
+        }
+        nav{
+            margin: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav__logo{
+            font-size: 1.5em;
+        }
+        .nav__toggle{
+            display: none;
+        }
+        .nav__list{
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            list-style-type: none;
+        }
+        .nav__item{
+            margin-left: 20px;
+            transition: 300ms;
+        }
+        .nav__item.active{
+            background-color: white;
+        }
+        .nav__item:hover{transform: translateY(-3px)}
+        .nav__item:hover .nav__link{color: var(--global-color);}
+        .nav__link{color: black;}
+        .nav__item.active .nav__link{
+            color: var(--global-color);
+        }
+    }
+</style>
+<script>
+    const activeFunc = (toggleId, elementId) => {
+        let toggle = document.getElementById(toggleId),
+        elemnt = document.getElementById(elementId);
+
+        if(toggle && elemnt){
+            toggle.addEventListener('click', ()=>{
+                elemnt.classList.toggle('active');
+            })
+        }
+    }
+
+    activeFunc('nav-toggle','nav-list')
+    activeFunc('nav-toggle','nav-toggle')
+
+    const navLink = document.querySelectorAll('.nav__item')
+    function linkAction(){
+        navLink.forEach(n => n.classList.remove('active'));
+        this.classList.add('active');
+
+        let navMenu = document.getElementById('nav-list'),
+        navToggle = document.getElementById('nav-toggle');
+
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+    }
+    navLink.forEach(n => n.addEventListener('click', linkAction))
+</script>
+</html>

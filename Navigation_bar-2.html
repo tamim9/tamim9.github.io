@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WebPage</title>
+    <link rel="shortcut icon" href="https://by3302files.storage.live.com/y4mjnK4C3r2VUbvAWqzqgIhEfkYN2Vyefof9KyCeiblTUKB5NhegWlA6KC0b0lFaBtLaB8CzN7zHUtIQDXEVpoVbyvmOyXKI8LLzoCM2brcYKxWztH_GGImAR3uuQRrJcCgQPLbg1cMehP5AlnRUBHfV0vmq52iK3t4xZWmbeTUGFN2w57jemZwI0BAwxhZodls?width=70&height=70&cropmode=none" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav__menu bd-grid" id="nav-menu">
+            <div class="nav__logo">
+                SR TAMIM
+            </div>
+            <ul class="nav__list" id="nav-list">
+                <li class="nav__item active">
+                    <a href="#" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Education</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <div class="toggle__bar bar1"></div>
+                <div class="toggle__bar bar2"></div>
+                <div class="toggle__bar bar3"></div>
+            </div>
+        </nav>
+    </header>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --global-color: rgb(0, 194, 97);
+        --header-height: 3rem;
+        --header-font: 'RocknRoll One', sans-serif;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3rem;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    }
+    nav{
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav__logo{
+        color: var(--global-color);
+        font-family: var(--header-font);
+        font-size: 1.3em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+    .nav__list{
+        visibility: hidden;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+        background-color: rgba(211, 211, 211, 0.3);
+        border-bottom: 1px dashed rgba(0, 100, 0, 0.5);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: 300ms ease;
+    }
+    .nav__item{
+        padding: 5px 0;
+        cursor: pointer;
+    }
+    .nav__item.active{
+        background-color: var(--global-color);
+    }
+    .nav__link{
+        font-family: var(--header-font);
+        font-size: 1.4em;
+        color: var(--global-color);
+        text-decoration: none;
+    }
+    .nav__item.active .nav__link{
+        color: white;
+    }
+    .nav__toggle{
+        margin-right: 0.5em;
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+    }
+    .toggle__bar{
+        background-color: darkgreen;
+        width: 20px;
+        height: 2px;
+        transition: 400ms ease;
+    }
+    .toggle__bar.bar2{
+        margin: 4.5px 0;
+    }
+    /*show menu mobile*/
+    .nav__list.active{
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    .nav__toggle.active{
+        height: 15px;
+    }
+    .nav__toggle.active .bar1{
+        width: 25px;
+        margin-bottom: 9px;
+        transform: rotateZ(45deg);
+        transform-origin: top left;
+    }
+    .nav__toggle.active .bar2{
+        opacity: 0;
+    }
+    .nav__toggle.active .bar3{
+        width: 25px;
+        transform: rotateZ(-45deg);
+        transform-origin: bottom left;
+    }
+    
+    
+    @media screen and (min-width: 600px){
+        header{
+            height: auto;
+        }
+        nav{
+            margin: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav__logo{
+            font-size: 1.5em;
+        }
+        .nav__toggle{
+            display: none;
+        }
+        .nav__list{
+            visibility: visible;
+            position: relative;
+            top: auto;
+            left: auto;
+            width: auto;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            list-style-type: none;
+            background-color: white;
+            border: none;
+            transform: none;
+        }
+        .nav__item{
+            margin-left: 20px;
+            transition: 300ms;
+        }
+        .nav__link{color: black; font-size: 1.1em;}
+        .nav__link::after{
+            visibility: hidden;
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--global-color);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: 200ms ease;
+        }
+    
+        .nav__item:hover{transform: translateY(-3px)      !important}
+        .nav__item:hover .nav__link{color: var(--global-color);}
+        .nav__item:hover .nav__link::after{
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    
+        .nav__item.active{
+            background-color: white;
+            transform: translateY(-1px);
+        }
+        .nav__item.active .nav__link{
+            color: var(--global-color);
+        }
+        .nav__item.active .nav__link::after{
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+</style>
+<script>
+    const activeFunction = (toggleId, elementId) => {
+        let toggle = document.getElementById(toggleId),
+        elemnt = document.getElementById(elementId);
+
+        if(toggle && elemnt){
+            toggle.addEventListener('click', ()=>{
+                elemnt.classList.toggle('active');
+            })
+        }
+    }
+    activeFunction('nav-toggle','nav-list')
+    activeFunction('nav-toggle','nav-toggle')
+
+    const navLink = document.querySelectorAll('.nav__item');
+    function linkAction(){
+        navLink.forEach(n => n.classList.remove('active'));
+        this.classList.add('active');
+
+        let navMenu = document.getElementById('nav-list'),
+        navToggle = document.getElementById('nav-toggle');
+
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+    }
+    navLink.forEach(n => n.addEventListener('click', linkAction))
+</script>
+</html>
