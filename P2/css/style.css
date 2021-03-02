@@ -165,7 +165,7 @@ body{
 .service_details{
     margin: 0 15%;
     color: black;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     line-height: 30px;
     margin-bottom: 30px;
@@ -193,6 +193,7 @@ body{
 }
 
 @media screen and (min-width: 768px){
+    .section-subtitle{font-size: 25px;}
     .nav_toggle{display: none;}
     .nav_menu{
         visibility: visible;
@@ -241,6 +242,8 @@ body{
         visibility: visible;
         transform: scaleX(1);
     }
+    .service_icon{font-size: 60px;}
+    .service_details{font-size: 20px;}
 }
 @media screen and (min-width: 992px){
     nav{
@@ -296,6 +299,7 @@ body{
     .nav_link{
         font-size: 30px;
     }
+    .service_details{font-size: 23px;}
 }
 
 @media screen and (min-width: 1220px){
