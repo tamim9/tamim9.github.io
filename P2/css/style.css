@@ -165,7 +165,7 @@ body{
 .service_details{
     margin: 0 15%;
     color: black;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     line-height: 30px;
     margin-bottom: 30px;
@@ -243,7 +243,6 @@ body{
         transform: scaleX(1);
     }
     .service_icon{font-size: 60px;}
-    .service_details{font-size: 20px;}
 }
 @media screen and (min-width: 992px){
     nav{
@@ -265,6 +264,7 @@ body{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    .service_details{font-size: 16px;}
     .virtual_assistance{
         padding-top: 50px;
     }
