@@ -3,8 +3,12 @@
 :root{
     --global-color: rgb(0, 48, 180);
     --second-color: rgb(204, 0, 61);
+    --third-color: rgb(255, 102, 0);
     --header-height: 60px;
 }
+
+
+
 
 *,::before,::after{
     box-sizing: border-box;
@@ -12,11 +16,14 @@
 h2{
     margin-top: 0;
     margin-bottom: 90px;
-    padding-top: 40px;
+    text-align: center;
 }
 h3{
     margin: 20px 0;
 }
+
+
+
 
 .section-title{
     width: 100%;
@@ -29,17 +36,22 @@ h3{
 .section-title::after{
     content: '';
     position: absolute;
-    top: calc(100% + 5px);
+    top: calc(100% + 10%);
     left: 0;
     right: 0;
-    width: 100px;
+    width: 70%;
     height: 3px;
     margin: auto;
-    background-color: var(--global-color);
+    background: var(--global-color);
 }
 .section-subtitle{
     font-size: 20px;
 }
+
+
+
+
+
 
 .bd-grid{
     max-width: 1200px;
@@ -48,7 +60,6 @@ h3{
     grid-column-gap: 2rem;
     width: calc(100% - 20px);
 }
-
 .header{
     position: fixed;
     left: 0;
@@ -70,6 +81,12 @@ body{
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+
+
+
+
+
 
 .nav{
     height: var(--header-height);
@@ -97,7 +114,7 @@ body{
     letter-spacing: 3px;
     font-size: 16px;
     font-weight: 700;
-    color: var(--global-color);
+    color: var(--second-color);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 .logo_text small{
@@ -150,6 +167,8 @@ body{
     background-color: rgb(0, 163, 54);
 }
 
+
+
 /*show menu mobile*/
 .nav_menu.active{
     visibility: visible;
@@ -165,6 +184,8 @@ body{
     transform: rotate(-45deg);
 }
 
+
+
 /*active menu item mobile*/
 .nav_link.active{
     color: white;
@@ -172,10 +193,15 @@ body{
 }
 
 
+
+
+
+
+
+
 .home{
     display: none;
     background: url("../img/telephone-back.jpg");
-    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -211,12 +237,17 @@ body{
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    background-color: var(--global-color);
+    background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
     transition: 500ms;
 }
 .home_button:hover{
     transform: translateY(-10px);
 }
+
+
+
+
+
 
 
 
@@ -230,6 +261,7 @@ body{
 }
 .services_wrapper{
     background-color: rgba(0, 0, 0, 0.1);
+    padding: 100px 0;
 }
 .services_container{
     text-align: center;
@@ -257,14 +289,199 @@ body{
     text-decoration: none;
     font-size: 20px;
     color: white;
-    background-color: var(--global-color);
+    background: linear-gradient(to bottom, var(--second-color), var(--global-color));
     padding: 10px 20px;
     display: inline-block;
-    transition: 500ms ease-in-out;
+    transition: transform 500ms ease-in-out;
 }
 .service_button a:hover{
     transform: translateY(-10px);
+    background: linear-gradient(to bottom, var(--global-color), var(--global-color));
 }
+
+
+
+
+
+
+
+
+
+.testimonial{
+    position: relative;
+    padding: 50px 0;
+    width: 100%;
+}
+.testimonials-carousel-wrap{
+    max-width: 1200px;
+    position: relative;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.listing-carousel-button{
+	position: absolute;
+	top: 50%;
+	width: 80px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: -25px;
+	z-index: 100;
+	cursor: pointer;
+	background: linear-gradient(to bottom right, var(--global-color), var(--second-color));
+	box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
+	transition: all 200ms linear;
+	outline: none;
+}
+.listing-carousel-button.listing-carousel-button-next{
+    text-align: left;
+	right: -30px;
+	padding-left: 30px;
+	border-radius: 60px 0 0 60px;
+}
+.listing-carousel-button.listing-carousel-button-prev{
+    text-align: right;
+	left: -30px;
+	padding-right: 30px;
+	border-radius: 0 60px 60px 0;
+}
+.listing-carousel-button.listing-carousel-button-next:hover{
+	right: -15px;
+	background: linear-gradient(to bottom right, var(--global-color), var(--global-color));
+}
+.listing-carousel-button.listing-carousel-button-prev:hover{
+	left: -15px;
+	background: linear-gradient(to bottom right, var(--global-color), var(--global-color));
+}
+.testi-item {
+	transition: all .3s ease-in-out;
+	transform: scale(0.9);
+	opacity: 0.9;
+    text-align: center;
+}
+.testimonials-text {
+	padding: 75px 50px 75px;
+	overflow:hidden;
+	background: #f5f6fa;
+	border:1ps solid #f1f1f1;
+	border-radius: 10px;
+	transition: all .3s ease-in-out;
+}
+.testimonials-text-after{
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	position: absolute;
+	color: #ccc;
+	opacity: .3;
+	font-size: 35px;
+	transition: all 400ms linear;
+	bottom: 25px;
+	right: 30px;
+}
+.testimonials-text-before{
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	position: absolute;
+	color: #ccc;
+	opacity: .3;
+	font-size: 35px;
+	transition: all 400ms linear;
+	top: 25px;
+	left: 30px;
+}
+.testimonials-text .listing-rating{
+	float: none;
+	display: inline-block;
+	margin-bottom: 12px;
+}
+.listing-rating i{
+	color: darkred;
+}
+.testimonials-avatar h3{
+	font-weight: 600;
+	color: var(--second-color);
+	font-size: 18px;
+}
+.testimonials-avatar h4{
+	font-weight:400;
+	font-size:12px;
+	padding-top:6px;
+	color: var(--third-color);
+}
+.testimonials-carousel .swiper-slide{
+	padding: 30px 0;
+}
+.swiper-slide-active .testimonials-text {
+	background: #fff;
+	box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
+}
+.testimonials-text p{
+	color: var(--global-color);
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	line-height: 24px;
+	padding-bottom: 10px;
+	font-weight: 500;
+}
+.text-link{
+	position: absolute;
+	bottom:0;
+	padding: 15px 0;
+	border-radius: 10px 10px 0 0;
+	background: #f9f9f9;
+	border:1px solid #eee;
+	box-shadow: 0 10px 15px rgba(0,0,0,0.03);
+	left: 50%;
+	width: 200px;
+	margin-left: -100px;
+}
+.swiper-slide-active .testi-item{
+	opacity: 1;
+	transform: scale(1.0);
+}
+.tc-pagination{
+    display: flex;
+    justify-content: center;
+	margin-top: 10px;
+	width: 100% !important;
+}
+.tc-pagination_wrap {
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	width: 100%;
+}
+.tc-pagination2{
+	float: none;
+	display: inline-block;
+	padding: 14px 0;
+	background: #fff;
+	border-radius: 30px;
+	min-width: 250px;
+	border-bottom: 0;
+}
+.tc-pagination .swiper-pagination-bullet, .tc-pagination2.swiper-pagination-bullet{
+	opacity: 1;
+	background: #384f95;
+	margin:0 2px;
+	width: 10px;
+	height: 10px;
+	transition: all 300ms ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /*media query*/
@@ -276,8 +493,11 @@ body{
 
 @media screen and (min-width: 768px){
     .section-subtitle{font-size: 25px;}
+
     .nav{height: calc(var(--header-height) + 20px);}
+
     .nav_toggle{display: none;}
+
     .nav_menu{
         visibility: visible;
         transform: none;
@@ -317,7 +537,7 @@ body{
         top: calc(100% - 3px);
         width: 100%;
         height: 2.5px;
-        background-color: var(--second-color);
+        background: linear-gradient(to right, var(--second-color), var(--global-color));
         transform: scaleX(0);
         transition: 200ms;
     }
@@ -326,8 +546,10 @@ body{
         transform: scaleX(1);
     }
     .home{display: block;}
+
     .service_icon{font-size: 60px;}
 }
+
 @media screen and (min-width: 992px){
     nav{
         height: calc(var(--header-height) + 20px);
@@ -357,6 +579,7 @@ body{
         grid-template-columns: repeat(2, 1fr);
     }
     .service_details{font-size: 16px;}
+
     .virtual_assistance{
         padding-top: 50px;
     }
