@@ -41,6 +41,10 @@ function initParadoxWay() {
             grabCursor: true,
             mousewheel: false,
             centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: true,
+            },
             pagination: {
                 el: '.tc-pagination',
                 clickable: true,
@@ -51,10 +55,15 @@ function initParadoxWay() {
                 prevEl: '.listing-carousel-button-prev',
             },
             breakpoints: {
-                1024: {
+                1200: {
                     slidesPerView: 3,
                 },
-                
+                992: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 1.5,
+                }
             }
         });
     }

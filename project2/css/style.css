@@ -33,7 +33,9 @@ h3{
 
 
 
-
+.section{
+    padding: 100px 0;
+}
 .section-title{
     width: 100%;
     text-align: center;
@@ -56,9 +58,6 @@ h3{
 }
 .section-subtitle{
     font-size: 20px;
-}
-.wrapper{
-    padding: 100px 0;
 }
 
 
@@ -219,12 +218,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
-.home_wrapper{
-    background-color: rgba(0, 46, 195, 0.3);
-}
-.home_wrapper div{
-    height: 700px;
-}
 .home_title{
     display: flex;
     flex-direction: column;
@@ -237,7 +230,7 @@ body{
     text-align: center;
     text-transform: capitalize;
     font-size: 65px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.3em;
     letter-spacing: 1px;
     color: white;
@@ -271,9 +264,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.services_wrap{
-    background-color: rgba(0, 0, 0, 0.1);
 }
 .large-title{
     display: none;
@@ -327,16 +317,18 @@ body{
 
 
 .testimonial{
-    position: relative;
     width: 100%;
+    background: url("../img/arrow-back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
-.testimonial_wrap{
-    max-width: 1200px;
-    width: calc(100% - 20px);
-    position: absolute;
+.testimonial div{
+    grid-template-columns: 100%;
 }
 .testimonials-carousel-wrap{
-    width: 100%;
+    position: relative;
 }
 .swiper-container {
 	width: 100%;
@@ -385,7 +377,7 @@ body{
 .testimonials-text {
 	padding: 75px 50px 75px;
 	overflow:hidden;
-	background: #f5f6fa;
+	background: rgba(255, 255, 255, 0.4);
 	border:1ps solid #f1f1f1;
 	border-radius: 10px;
 	transition: all .3s ease-in-out;
@@ -439,7 +431,7 @@ body{
 	padding: 30px 0;
 }
 .swiper-slide-active .testimonials-text {
-	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
 	box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
 }
 .testimonials-text p{
