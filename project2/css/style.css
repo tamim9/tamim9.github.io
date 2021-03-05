@@ -79,7 +79,7 @@ h3{
     width: 100%;
     background-color: white;
     box-shadow: 0 1px 3px rgba(128, 128, 128, 0.5);
-    z-index: 10;
+    z-index: 100;
 }
 body{
     position: absolute;
@@ -336,37 +336,37 @@ body{
 }
 .listing-carousel-button{
 	position: absolute;
-	top: 55%;
+	top: 60%;
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
 	margin-top: -25px;
-	z-index: 100;
+	z-index: 10;
 	cursor: pointer;
-	background: linear-gradient(to bottom right, var(--global-color), var(--second-color));
+	background: var(--global-color);
 	box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
 	transition: all 200ms linear;
 	outline: none;
 }
 .listing-carousel-button.listing-carousel-button-next{
     text-align: left;
-	right: 0;
+	right: -10px;
 	padding-left: 20px;
 	border-radius: 60px 0 0 60px;
 }
 .listing-carousel-button.listing-carousel-button-prev{
     text-align: right;
-	left: 0;
+	left: -10px;
 	padding-right: 20px;
 	border-radius: 0 60px 60px 0;
 }
 .listing-carousel-button.listing-carousel-button-next:hover{
-	right: 10px;
-	background: linear-gradient(to bottom right, var(--global-color), var(--global-color));
+	right: 0;
+	background: grey;
 }
 .listing-carousel-button.listing-carousel-button-prev:hover{
-	left: 10px;
-	background: linear-gradient(to bottom right, var(--global-color), var(--global-color));
+	left: 0;
+	background: grey;
 }
 .testi-item {
 	transition: all .3s ease-in-out;
@@ -377,8 +377,7 @@ body{
 .testimonials-text {
 	padding: 75px 50px 75px;
 	overflow:hidden;
-	background: rgba(255, 255, 255, 0.4);
-	border:1ps solid #f1f1f1;
+    border: 1px solid rgb(212, 212, 212);
 	border-radius: 10px;
 	transition: all .3s ease-in-out;
 }
@@ -430,10 +429,6 @@ body{
 .testimonials-carousel .swiper-slide{
 	padding: 30px 0;
 }
-.swiper-slide-active .testimonials-text {
-	background: rgba(255, 255, 255, 0.5);
-	box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
-}
 .testimonials-text p{
 	color: var(--global-color);
 	font-size: 14px;
@@ -442,18 +437,6 @@ body{
 	line-height: 24px;
 	padding-bottom: 10px;
 	font-weight: 500;
-}
-.text-link{
-	position: absolute;
-	bottom:0;
-	padding: 15px 0;
-	border-radius: 10px 10px 0 0;
-	background: #f9f9f9;
-	border:1px solid #eee;
-	box-shadow: 0 10px 15px rgba(0,0,0,0.03);
-	left: 50%;
-	width: 200px;
-	margin-left: -100px;
 }
 .swiper-slide-active .testi-item{
 	opacity: 1;
@@ -493,6 +476,38 @@ body{
 
 
 
+/*contact*/
+.contact{
+    background: url("../img/contact-back2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact_input{
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 10px 0;
+    font-family: var(--body-font);
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
+}
+.contact_submit{
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+
+
+
+
+
 
 
 
@@ -504,6 +519,12 @@ body{
 @media screen and (min-width: 600px){
     .nav_link{
         font-size: 20px;
+    }
+    .contact{
+        background: url("../img/contact-back.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -554,6 +575,7 @@ body{
         width: 100%;
         height: 2.5px;
         background: linear-gradient(to right, var(--second-color), var(--global-color));
+        border-radius: 10px 10px 0 0;
         transform: scaleX(0);
         transition: 200ms;
     }
@@ -564,6 +586,19 @@ body{
     .home{display: block;}
 
     .service_icon{font-size: 60px;}
+
+    .testimonials-text{background-color: rgba(255, 255, 255, 0.4);}
+    .swiper-slide-active .testimonials-text {
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
+    }
+
+    .contact_container{
+        justify-content: center;
+    }
+    .contact_form{
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 992px){
