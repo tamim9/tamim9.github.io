@@ -74,3 +74,23 @@ function initParadoxWay() {
 $(document).ready(function () {
     initParadoxWay();
 });
+
+
+
+/*Back to top Button*/
+var toTopBut = document.getElementById('topButton');
+
+window.onscroll = function() {showTopBut()};
+
+function showTopBut(){
+    if(document.body.scrollTop > 400 || document.documentElement.scrollTop > 400){
+        toTopBut.style.display = "block";
+    }else {
+        toTopBut.style.display = "none";
+    }
+}
+
+function topButFunc(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
