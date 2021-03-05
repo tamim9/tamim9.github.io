@@ -506,6 +506,46 @@ body{
 
 
 
+.footer{
+    width: 100%;
+    max-width: 1400px;
+    padding: 50px 0 0 0;
+    margin: auto;
+}
+.footer_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer_logo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+.footer_title{
+    margin: 0 0 0 10px;
+    position: relative;
+    font-size: 30px;
+    color: var(--second-color);
+    text-transform: uppercase;
+}
+.footer_details{
+    width: calc(100% - 40px);
+    text-align: justify;
+    margin: 0 auto;
+    color: rgb(90, 90, 90);
+}
+.copyright_text{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid grey;
+}
+
+
 
 
 
