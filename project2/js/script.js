@@ -94,3 +94,6 @@ function topButFunc(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+
+alert(window.innerWidth + ","+ window.innerHeight);
