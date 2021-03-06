@@ -42,7 +42,7 @@ function initParadoxWay() {
             mousewheel: false,
             centeredSlides: true,
             autoplay: {
-                delay: 3000,
+                delay: 2000,
                 disableOnInteraction: true,
             },
             pagination: {
@@ -69,7 +69,6 @@ function initParadoxWay() {
     }
         
 }
-
 //   Init All ------------------
 $(document).ready(function () {
     initParadoxWay();
@@ -80,7 +79,7 @@ $(document).ready(function () {
 /*Back to top Button*/
 var toTopBut = document.getElementById('topButton');
 
-window.onscroll = function() {showTopBut()};
+window.onscroll = function() {showTopBut(), navShrink()};
 
 function showTopBut(){
     if(document.body.scrollTop > 400 || document.documentElement.scrollTop > 400){
@@ -89,28 +88,20 @@ function showTopBut(){
         toTopBut.style.display = "none";
     }
 }
-
-function topButFunc(){
+$("#topButton").click(function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-}
+})
 
 
-
-var navigation = document.getElementById('nav');
-var header = document.getElementById('header');
-
-window.onscroll = function() {shrink()};
-function shrink(){
-    if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
-        navigation.style.transform = "scale(1)";
-        navigation.style.transition = "1s";
-        header.style.height = "80px";
-        header.style.transition = "1s";
-    }else{
-        navigation.style.transform = "scale(1.3)";
-        navigation.style.transition = "1s";
-        header.style.height = "92px";
-        header.style.transition = "1s";
+function navShrink() {
+    let navBar = document.getElementById("nav"),
+        navLogo = document.getElementById('nav-logo');
+    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        navBar.style.height = "var(--header-height)";
+        navLogo.style.transform = "scale(1)";
+    } else {
+        navBar.style.height = "120px";
+        navLogo.style.transform = "scale(1.5)";
     }
 }
