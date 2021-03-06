@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="shortcut icon" href="https://by3302files.storage.live.com/y4mjnK4C3r2VUbvAWqzqgIhEfkYN2Vyefof9KyCeiblTUKB5NhegWlA6KC0b0lFaBtLaB8CzN7zHUtIQDXEVpoVbyvmOyXKI8LLzoCM2brcYKxWztH_GGImAR3uuQRrJcCgQPLbg1cMehP5AlnRUBHfV0vmq52iK3t4xZWmbeTUGFN2w57jemZwI0BAwxhZodls?width=70&height=70&cropmode=none" type="image/x-icon">
@@ -15,7 +14,7 @@
     <header class="header" id="header">
         <nav class="nav bd-grid" id="nav">
             <div class="nav_logo" id="nav-logo">
-                <img src="img/logo.jpg">
+                <img src="img/logo.jpg" alt="teleshade">
                 <div class="logo_text">
                     <span id="nav_logo-title">teleshade</span><br>
                     <span id="nav_logo-sub-title">let's beat the best</span>
@@ -242,22 +241,32 @@
                 <h2><span class="section-title">contact with us</span></h2>
 
                 <form action="" method="get" class="contact_form">
-                    <input type="text" placeholder="Name" class="contact_input input_name">
-                    <input type="mail" placeholder="E-mail" class="contact_input input_mail" required>
-                    <textarea name="" placeholder="type your message here" id="contact_message" cols="0" rows="10" class="contact_input input_message" required></textarea>
+                    <label for="input-name"></label>
+                    <input type="text" placeholder="Name" class="contact_input" id="input-name">
+                    <label for="input-mail"></label>
+                    <input type="mail" placeholder="E-mail" class="contact_input" id="input-mail" required>
+                    <label for="contact-message"></label>
+                    <textarea name="" placeholder="type your message here" id="contact-message" cols="0" rows="10" class="contact_input input_message" required></textarea>
 
                     <input type="submit" value="Submit" class="contact_submit">
                 </form>
             </div>
         </section>
         <section class="map">
-            <iframe width="100%" height="400" src="https://maps.google.com/maps?q=dhaka,%20bangladesh&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" loading="lazy"></iframe>
+            <iframe
+            width="100%"
+            height="400"
+            src="https://maps.google.com/maps?q=dhaka,%20bangladesh&t=&z=7&ie=UTF8&iwloc=&output=embed"
+            title="google-map"
+            scrolling="no"
+            loading="lazy"
+            style="border: none; margin: 0;"></iframe>
         </section>
         <footer class="footer">
             <div>
                 <div class="footer_head">
                     <div class="footer_logo">
-                        <img src="img/logo.jpg">
+                        <img src="img/logo.jpg" alt="teleshade">
                     </div>
                     <h2 class="footer_title">
                         <span>teleshade</span>
@@ -270,7 +279,7 @@
 
             <div class="footer_lists">
                 <ul class="footer_list_items">
-                    <span class="footer_list_caption">get started</span>
+                    <li class="footer_list_caption">get started</li>
                     <li class="footer_link">
                         <a href="#">cold calling</a>
                     </li>
@@ -291,7 +300,7 @@
                     </li>
                 </ul>
                 <ul class="footer_list_items">
-                    <span class="footer_list_caption">about</span>
+                    <li class="footer_list_caption">about</li>
                     <li class="footer_link">
                         <a href="#">what we do</a>
                     </li>
@@ -300,21 +309,6 @@
                     </li>
                     <li class="footer_link">
                         <a href="#">our clients</a>
-                    </li>
-                </ul>
-                <ul class="footer_list_items">
-                    <span class="footer_list_caption">navigate</span>
-                    <li class="footer_link">
-                        <a href="#">admin log in</a>
-                    </li>
-                    <li class="footer_link">
-                        <a href="#">agents log in</a>
-                    </li>
-                    <li class="footer_link">
-                        <a href="#">supervisor log in</a>
-                    </li>
-                    <li class="footer_link">
-                        <a href="#">career</a>
                     </li>
                 </ul>
             </div>

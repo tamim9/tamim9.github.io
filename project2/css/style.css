@@ -5,7 +5,10 @@
     --global-color: rgb(0, 48, 180);
     --second-color: rgb(204, 0, 61);
     --third-color: rgb(255, 102, 0);
-    --header-height: 60px;
+
+    --normal-header-height: 60px;
+    --abnormal-header-height: 120px;
+
     --body-font: 'Roboto', sans-serif;
     --title-font: 'PT Sans', sans-serif;
     --second-font: 'Merienda', sans-serif;
@@ -51,13 +54,12 @@ body{
     word-wrap: break-word;
     user-select: none;
     -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 
 
 .section{
-    padding: var(--header-height) 0 60px 0;
+    padding: var(--normal-header-height) 0 60px 0;
 }
 .section-title{
     width: 100%;
@@ -153,7 +155,7 @@ body{
 .nav_menu{
     visibility: hidden;
     position: fixed;
-    top: var(--header-height);
+    top: var(--abnormal-header-height);
     left: 0;
     width: 100%;
     transform: scaleY(0);
@@ -637,6 +639,9 @@ body{
     cursor: pointer;
     z-index: var(--z-top);
 }
+#topButton:hover{
+    opacity: 0.6;
+}
 
 
 
@@ -663,7 +668,7 @@ body{
 @media screen and (min-width: 768px){
 
     :root{
-        --header-height: 80px;
+        --normal-header-height: 80px;
     }
     .section-subtitle{font-size: 25px;}
 
@@ -674,7 +679,7 @@ body{
         visibility: visible;
         transform: none;
         position: relative;
-        top: 0;
+        top: 0  !important;
         left: 0;
         width: auto;
         height: 100%;
@@ -800,7 +805,7 @@ body{
 }
 @media screen and (min-width: 1200px){
     :root{
-        --header-height: 90px;
+        --normal-header-height: 90px;
     }
     .nav_menu{
         margin-right: 30px;
@@ -817,7 +822,7 @@ body{
 }
 @media screen and (min-width: 2000px){
     :root{
-        --header-height: 100px;
+        --normal-header-height: 100px;
     }
     .nav_logo img{
         height: 50px;
