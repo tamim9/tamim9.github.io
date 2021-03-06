@@ -9,6 +9,12 @@
     --body-font: 'Roboto', sans-serif;
     --title-font: 'PT Sans', sans-serif;
     --second-font: 'Merienda', sans-serif;
+
+    --z-back: -10;
+    --z-normal: 1;
+    --z-top: 10;
+    --z-over-top: 50;
+    --z-tooltip: 100;
 }
 
 
@@ -83,7 +89,7 @@ h3{
     width: 100%;
     background-color: white;
     box-shadow: 0 1px 3px rgba(128, 128, 128, 0.5);
-    z-index: 100;
+    z-index: var(--z-over-top);
 }
 body{
     position: absolute;
@@ -328,7 +334,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-.testimonial div{
+.testimonial .bd-grid{
     grid-template-columns: 100%;
 }
 .testimonials-carousel-wrap{
@@ -345,7 +351,7 @@ body{
 	height: 50px;
 	line-height: 50px;
 	margin-top: -25px;
-	z-index: 10;
+	z-index: var(--z-top);
 	cursor: pointer;
 	background: var(--global-color);
 	box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
@@ -380,7 +386,7 @@ body{
 }
 .testimonials-text {
 	padding: 75px 50px 75px;
-	overflow:hidden;
+	overflow: hidden;
     border: 1px solid rgb(212, 212, 212);
 	border-radius: 10px;
 	transition: all .3s ease-in-out;
@@ -621,6 +627,7 @@ body{
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
+    z-index: var(--z-top);
 }
 
 
