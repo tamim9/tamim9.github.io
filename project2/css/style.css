@@ -78,7 +78,7 @@ body{
     width: 70%;
     height: 3px;
     margin: auto;
-    background: var(--global-color);
+    background: linear-gradient(to right, var(--global-color), var(--second-color));
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 }
 .section-subtitle{
@@ -142,7 +142,10 @@ body{
     letter-spacing: 3px;
     font-size: 16px;
     font-weight: 700;
-    color: var(--second-color);
+    background: linear-gradient(to right, var(--global-color), var(--second-color), var(--third-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 #nav_logo-sub-title{
@@ -300,6 +303,10 @@ body{
     display: inline-block;
     font-size: 50px;
     transition: 300ms;
+    background: linear-gradient(var(--global-color), var(--second-color));
+    background-clip: text;
+    -webkit-background-clip: text;    
+    -webkit-text-fill-color: transparent;
 }
 .service_icon:hover{
     transform: scale(1.1);
@@ -362,7 +369,7 @@ body{
 	margin-top: -25px;
 	z-index: var(--z-top);
 	cursor: pointer;
-	background: var(--global-color);
+	background: linear-gradient(to bottom right, var(--global-color), var(--second-color));
 	box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
 	transition: all 200ms linear;
 	outline: none;
@@ -381,11 +388,11 @@ body{
 }
 .listing-carousel-button.listing-carousel-button-next:hover{
 	right: 0;
-	background: grey;
+	background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
 }
 .listing-carousel-button.listing-carousel-button-prev:hover{
 	left: 0;
-	background: grey;
+	background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
 }
 .testi-item {
 	transition: all .3s ease-in-out;
@@ -536,9 +543,12 @@ body{
 }
 
 
+
 .map{
     height: 400px;
 }
+
+
 
 
 .footer{
