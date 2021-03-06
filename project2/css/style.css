@@ -154,6 +154,10 @@ body{
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.7px;
+    background: linear-gradient(to right, var(--global-color), var(--second-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .nav_menu{
     visibility: hidden;
