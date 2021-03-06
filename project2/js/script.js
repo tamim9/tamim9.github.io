@@ -96,4 +96,21 @@ function topButFunc(){
 }
 
 
-alert(window.innerWidth + ","+ window.innerHeight);
+
+var navigation = document.getElementById('nav');
+var header = document.getElementById('header');
+
+window.onscroll = function() {shrink()};
+function shrink(){
+    if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+        navigation.style.transform = "scale(1)";
+        navigation.style.transition = "1s";
+        header.style.height = "80px";
+        header.style.transition = "1s";
+    }else{
+        navigation.style.transform = "scale(1.3)";
+        navigation.style.transition = "1s";
+        header.style.height = "92px";
+        header.style.transition = "1s";
+    }
+}
