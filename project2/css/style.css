@@ -46,7 +46,7 @@ h3{
 
 body{
     position: absolute;
-    top: 120px;
+    top: var(--normal-header-height);
     margin: 0;
     padding: 0;
     width: 100%;
@@ -113,7 +113,7 @@ body{
 
 
 .nav{
-    height: 120px;
+    height: var(--normal-header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,8 +123,6 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    transform: scale(1.5);
-    transform-origin: left;
     transition: 500ms;
 }
 .nav_logo img{
@@ -161,7 +159,7 @@ body{
 .nav_menu{
     visibility: hidden;
     position: fixed;
-    top: var(--abnormal-header-height);
+    top: var(--normal-header-height);
     left: 0;
     width: 100%;
     transform: scaleY(0);
@@ -283,7 +281,6 @@ body{
 
 
 .services{
-    padding-top: var(--abnormal-header-height);
     min-height: 100%;
     background: url("../img/service-back.jpg");
     background-attachment: fixed;
@@ -674,8 +671,16 @@ body{
 /*media query*/
 @media screen and (min-width: 600px){
 
+    :root{
+        --normal-header-height: 70px;
+    }
     .section-title{
         font-size: 50px;
+    }
+
+    .nav_logo{
+        transform: scale(1.1);
+        transform-origin: left;
     }
 
     .nav_link{
@@ -697,6 +702,16 @@ body{
     .section-subtitle{font-size: 25px;}
 
 
+    body{
+        top: var(--abnormal-header-height);
+    }
+    .nav{
+        height: var(--abnormal-header-height);
+    }
+    .nav_logo{
+        transform: scale(1.5);
+        transform-origin: left;
+    }
     .nav_toggle{display: none;}
 
     .nav_menu{

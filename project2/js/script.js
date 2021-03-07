@@ -95,16 +95,15 @@ $("#topButton").click(function(){
 
 
 function navShrink() {
-    let navBar = document.getElementById("nav"),
-        navMenu = document.getElementById('nav-menu'),
+    if(window.innerWidth >= 768){
+        let navBar = document.getElementById("nav"),
         navLogo = document.getElementById('nav-logo');
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        navBar.style.height = "var(--normal-header-height)";
-        navMenu.style.top = "var(--normal-header-height)";
-        navLogo.style.transform = "scale(1)";
-    } else {
-        navBar.style.height = "var(--abnormal-header-height)";
-        navMenu.style.top = "var(--abnormal-header-height)";
-        navLogo.style.transform = "scale(1.5)";
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            navBar.style.height = "var(--normal-header-height)";
+            navLogo.style.transform = "scale(1)";
+        } else {
+            navBar.style.height = "var(--abnormal-header-height)";
+            navLogo.style.transform = "scale(1.5)";
+        }
     }
 }
