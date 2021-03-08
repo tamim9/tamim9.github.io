@@ -7,7 +7,7 @@
     --third-color: rgb(255, 102, 0);
 
     --normal-header-height: 60px;
-    --abnormal-header-height: 120px;
+    --abnormal-header-height: 150px;
 
     --body-font: 'Roboto', sans-serif;
     --title-font: 'PT Sans', sans-serif;
@@ -102,7 +102,7 @@ body{
     left: 0;
     top: 0;
     width: 100%;
-    background-color: white;
+    background: white;
     box-shadow: 0 1px 3px rgba(128, 128, 128, 0.5);
     z-index: var(--z-over-top);
 }
@@ -123,7 +123,6 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: 500ms;
 }
 .nav_logo img{
     height: 35px;
@@ -173,7 +172,7 @@ body{
     padding: 0;
     text-align: center;
     list-style-type: none;
-    background-color: rgb(246, 246, 246)
+    background-color: rgb(246, 246, 246);
 }
 .nav_link{
     font-size: 17px;
@@ -700,18 +699,20 @@ body{
     :root{
         --normal-header-height: 80px;
     }
-    .section-subtitle{font-size: 25px;}
-
-
     body{
         top: var(--abnormal-header-height);
     }
+
+    .section-subtitle{font-size: 25px;}
+
+
     .nav{
         height: var(--abnormal-header-height);
     }
     .nav_logo{
         transform: scale(1.5);
         transform-origin: left;
+        transition: 500ms;
     }
     .nav_toggle{display: none;}
 
@@ -743,8 +744,8 @@ body{
         align-items: center;
     }
     .nav_link.active, .nav_link:hover{
-        color: var(--second-color);
-        background-color: white;
+        color: var(--second-color) !important;
+        background-color: transparent;
     }
     .nav_link::after{
         visibility: hidden;
