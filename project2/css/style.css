@@ -66,8 +66,11 @@ body{
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    color: var(--global-color);
     position: relative;
+    background: linear-gradient(to right, var(--global-color), var(--second-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .section-title::after{
     content: '';
@@ -139,7 +142,6 @@ body{
     letter-spacing: 3px;
     font-size: 16px;
     font-weight: 700;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     background: linear-gradient(to right, var(--global-color), var(--second-color), var(--third-color));
     background-clip: text;
     -webkit-background-clip: text;
@@ -525,10 +527,6 @@ body{
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.contact-submit-wrap{
-    display: inline-block;
-    width: 100%;
-}
 .contact_submit{
     display: block;
     cursor: pointer;
@@ -580,8 +578,12 @@ body{
 .footer_title{
     margin: 0 0 0 10px;
     position: relative;
+    font-family: "PT Sans", "Roboto", sans-serif;
     font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    text-shadow: none;
     background: linear-gradient(to left, var(--second-color), var(--third-color));
     background-clip: text;
     -webkit-background-clip: text;
