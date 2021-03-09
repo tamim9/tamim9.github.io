@@ -158,7 +158,6 @@ body{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-box-reflect: below 1px linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.2));
 }
 .nav_menu{
     visibility: hidden;
@@ -718,12 +717,6 @@ body{
         transform: scale(1.5);
         transform-origin: left;
         transition: 500ms;
-    }
-    .logo_text{
-        -webkit-box-reflect: below 1px linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1));
-    }
-    #nav_logo-sub-title{
-        -webkit-box-reflect: none;
     }
     .nav_toggle{display: none;}
 
