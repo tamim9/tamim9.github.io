@@ -121,7 +121,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 500ms;
 }
 .nav_logo{
     display: flex;
@@ -306,7 +305,7 @@ body{
 .service_icon{
     display: inline-block;
     font-size: 50px;
-    transition: 300ms;
+    transition: 100ms;
     background: linear-gradient(var(--global-color), var(--second-color));
     background-clip: text;
     -webkit-background-clip: text;    
@@ -331,7 +330,7 @@ body{
     background: linear-gradient(to bottom, var(--second-color), var(--global-color));
     padding: 10px 20px;
     display: inline-block;
-    transition: transform 500ms ease-in-out;
+    transition: transform 300ms ease-in-out;
     box-shadow: 0 5px 20px grey;
 }
 .service_button a:hover{
@@ -712,11 +711,12 @@ body{
 
     .nav{
         height: var(--abnormal-header-height);
+        transition: 300ms;
     }
     .nav_logo{
         transform: scale(1.5);
         transform-origin: left;
-        transition: 500ms;
+        transition: 300ms;
     }
     .nav_toggle{display: none;}
 
