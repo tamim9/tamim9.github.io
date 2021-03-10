@@ -25,6 +25,26 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click',linkAction));
 
 
+function linkActiveFunc(navlink, inViewPort){
+    var navigateLink = document.getElementById(navlink);
+    var navigateTo = document.getElementById(inViewPort);
+
+    if(document.body.scrollTop > navigateTo.offsetTop || document.documentElement.scrollTop > navigateTo.offsetTop){
+        navigateLink.classList.add("active");
+
+        if(document.body.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight) || document.documentElement.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight)){
+            navigateLink.classList.remove("active");
+        }
+    } else{
+        navigateLink.classList.remove("active");
+    }
+}
+window.addEventListener("scroll", () => {
+    linkActiveFunc("contact-link","contact"),
+    linkActiveFunc("services-link", "services"),
+    linkActiveFunc("testimonials-link", "testimonials");
+});
+
 
 
 
@@ -79,7 +99,7 @@ $(document).ready(function () {
 /*Back to top Button*/
 var toTopBut = document.getElementById('topButton');
 
-window.onscroll = function() {showTopBut(), navShrink()};
+window.addEventListener("scroll", showTopBut);
 
 function showTopBut(){
     if(document.body.scrollTop > 400 || document.documentElement.scrollTop > 400){
@@ -94,6 +114,8 @@ $("#topButton").click(function(){
 })
 
 
+
+window.addEventListener("scroll", navShrink);
 function navShrink() {
     if(window.innerWidth >= 768){
         let navBar = document.getElementById("nav"),

@@ -18,18 +18,23 @@
     --z-top: 10;
     --z-over-top: 50;
     --z-tooltip: 100;
-}
 
+    --cursor-pointer: url('pointer.cur'), pointer;
+}
 
 
 
 *,::before,::after{
     box-sizing: border-box;
+    cursor: url("cursor.cur"), default;
 }
 html{
     scroll-behavior: smooth;
 }
 
+a{
+    cursor: var(--cursor-pointer);
+}
 h2{
     margin-top: 0;
     margin-bottom: 90px;
@@ -183,13 +188,14 @@ body{
     display: inline-block;
     width: 100%;
     padding: 10px 0;
+    cursor: var(--cursor-pointer);
 }
 
 .nav_toggle{
     margin-right: 10px;
     width: 20px;
     height: 18px;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
 }
 .toggle_bar{
     width: 20px;
@@ -267,6 +273,7 @@ body{
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: var(--cursor-pointer);
     color: white;
     background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
     transition: 500ms;
@@ -282,14 +289,6 @@ body{
 
 
 
-.services{
-    min-height: 100%;
-    background: url("../img/service-back.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .services .large-title{
     display: none;
     text-transform: uppercase;
@@ -352,7 +351,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 .testimonial .bd-grid{
     grid-template-columns: 100%;
@@ -372,7 +370,7 @@ body{
 	line-height: 50px;
 	margin-top: -25px;
 	z-index: var(--z-top);
-	cursor: pointer;
+	cursor: var(--cursor-pointer);
 	background: linear-gradient(to bottom right, var(--global-color), var(--second-color));
 	box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
 	transition: all 200ms linear;
@@ -526,10 +524,13 @@ body{
     color: rgba(0, 0, 0, 0.8);
     background-color: rgba(255, 255, 255, 0.4);
 }
-
+#contact-message{
+    resize: vertical;
+    overflow: auto;
+}
 .contact_submit{
     display: block;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     margin-top: 10px;
     margin-left: auto;
     padding: 10px 20px;
@@ -655,16 +656,19 @@ body{
     bottom: 30px;
     font-size: 20px;
     color: whitesmoke;
-    background: var(--global-color);
+    background: linear-gradient(var(--global-color), var(--second-color));
     opacity: 0.4;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     z-index: var(--z-top);
 }
 #topButton:hover{
     opacity: 0.6;
-    background: linear-gradient(var(--global-color), var(--second-color));
+    background: linear-gradient(var(--global-color), var(--third-color));
+}
+#topButton::before{
+    cursor: var(--cursor-pointer);
 }
 
 
@@ -772,7 +776,21 @@ body{
         display: block;
     }
 
+
+    .services{
+        min-height: 100%;
+        background: url("../img/service-back.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .service_icon{font-size: 60px;}
+
+
+    .testimonial{
+        background-attachment: fixed;
+    }
 
     .testimonials-text{background-color: rgba(255, 255, 255, 0.4);}
     .swiper-slide-active .testimonials-text {
@@ -841,13 +859,10 @@ body{
     .services_container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        row-gap: 10rem;
     }
     .service_details{font-size: 16px;}
     .service_button a{font-size: 20px;}
-
-    .virtual_assistance{
-        padding-top: 50px;
-    }
 }
 @media screen and (min-width: 1200px){
     :root{

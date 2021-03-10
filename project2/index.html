@@ -8,7 +8,10 @@
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!--Font Awesome 5-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!--Testimonial Swiper Bundle-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css"/>
 </head>
 <body>
@@ -26,19 +29,19 @@
             <div class="nav_menu" id="nav-menu">
                 <ul class="nav_list">
                     <li class="nav_item">
-                        <a href="index.html" class="nav_link active">Home</a>
+                        <a href="index.html" class="nav_link active" id="home-link">Home</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#services" class="nav_link">Services</a>
+                        <a href="#services" class="nav_link" id="services-link">Services</a>
                     </li>
                     <li class="nav_item">
                         <a href="#" class="nav_link">Pricing</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">About Us</a>
+                        <a href="#testimonial" class="nav_link" id="testimonials-link">Testimonials</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#contact" class="nav_link">Contact Us</a>
+                        <a href="#contact" class="nav_link" id="contact-link">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -57,9 +60,8 @@
                     <h1 class="title_text">
                         We help businesses boost their sales globally
                     </h1>
-                    <span class="home-button-wrap">
-                        <a href="#" class="home_button">start with us now</a>
-                    </span>
+                    
+                    <a href="#" class="home_button">start with us now</a>
                 </div>
             </div>
         </section>
@@ -88,7 +90,7 @@
                 <div class="real_estate_appointment">
                     <div class="section-subtitle">
                         <span class="service_icon">
-                            <i class="fa fa-calendar" area-hidden="true"></i>
+                            <i class="far fa-calendar-check" area-hidden="true"></i>
                         </span>
                         <h3>Real Estate Appointment</h3>
                     </div>
@@ -102,7 +104,7 @@
                 <div class="script_writing">
                     <div class="section-subtitle">
                         <span class="service_icon">
-                            <i class="fa fa-book" area-hidden="true"></i>
+                            <i class="fa fa-pen-fancy" area-hidden="true"></i>
                         </span>
                         <h3>Script Writing</h3>
                     </div>
@@ -119,7 +121,7 @@
                 <div class="virtual_assistance">
                     <div class="section-subtitle">
                         <span class="service_icon">
-                            <i class="fa fa-laptop" area-hidden="true"></i>
+                            <i class="fa fa-desktop" area-hidden="true"></i>
                         </span>
                         <h3>Virtual Assistance</h3>
                     </div>
@@ -132,7 +134,7 @@
                 </div>
             </div>
         </section>
-        <section class="testimonial section" id="testimonial">
+        <section class="testimonial section" id="testimonials">
             <div class="bd-grid">
                 <h2 class="section-title-wrap"><span class="section-title">client's opinion</span></h2>
 
@@ -252,7 +254,7 @@
                     <label for="input-mail"></label>
                     <input type="email" name="email" placeholder="E-mail" class="contact_input" required>
                     <label for="contact-message"></label>
-                    <textarea name="message" placeholder="type your message here" cols="0" rows="10" class="contact_input" required></textarea>
+                    <textarea name="message" placeholder="type your message here" cols="0" rows="10" class="contact_input" id="contact-message" required></textarea>
 
                     <input type="submit" value="Submit" class="contact_submit">
                 </form>
@@ -299,9 +301,6 @@
                         <a href="#">MCA Appointment</a>
                     </li>
                     <li class="footer_link">
-                        <a href="#">MCA Live Transfer</a>
-                    </li>
-                    <li class="footer_link">
                         <a href="#">career</a>
                     </li>
                 </ul>
@@ -319,12 +318,14 @@
                 </ul>
             </div>
 
-            <p class="copyright_text">&#169; All rights reserved by SR TAMIM</p>
+            <p class="copyright_text">
+                &#169; 2021, All rights reserved by TeleShade |
+                Created by SR Tamim</p>
         </footer>
     </main>
 
     <!--Back to top button-->
-    <i class="fa fa-arrow-up" aria-hidden="true" id="topButton"></i>
+    <i class="fa fa-caret-up" aria-hidden="true" id="topButton"></i>
 </body>
 
 
