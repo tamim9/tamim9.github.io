@@ -129,3 +129,23 @@ function navShrink() {
         }
     }
 }
+
+
+
+
+
+
+
+function inView(){
+    var navigateTo = document.getElementsByClassName("i-v");
+
+    for(var i = 0; i < navigateTo.length; i++){
+        if(document.body.scrollTop > (navigateTo[i].offsetTop - window.innerHeight) || 
+        document.documentElement.scrollTop > (navigateTo[i].offsetTop - window.innerHeight))
+        {
+            navigateTo[i].classList.add("in-viewport");
+        }
+    }
+}
+setTimeout(inView, 1000);
+window.addEventListener("scroll", inView);

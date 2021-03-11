@@ -247,6 +247,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 .home_title{
     height: 100%;
@@ -266,6 +267,9 @@ body{
     letter-spacing: 1px;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    transform: translateX(1000px);
+    animation: slideIn 1.5s ease forwards 1s;
 }
 .home_button{
     display: inline-block;
@@ -277,9 +281,18 @@ body{
     color: white;
     background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
     transition: 500ms;
+    visibility: hidden;
+    transform: translate(-1000px, 0);
+    animation: slideIn 1.5s ease forwards 1s;
 }
 .home_button:hover{
-    transform: translateY(-10px);
+    transform: translate(0, -10px);
+}
+@keyframes slideIn{
+    to{
+        visibility: visible;
+        transform: translate(0, 0);
+    }
 }
 
 
@@ -552,6 +565,7 @@ body{
 
 .map{
     height: 400px;
+    overflow: hidden;
 }
 
 
@@ -916,3 +930,27 @@ body{
 
 
 
+/*-------in viewport animation ----------*/
+.i-v{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: 2s cubic-bezier(0.5, 0, 0, 1) 200ms;
+}
+.in-viewport{
+    opacity: 1;
+    transform: translateY(0);
+}
+.services_container .i-v{
+    transition-delay: 500ms;
+}
+@media screen and (min-width: 768px){
+    
+    .map .i-v{
+        opacity: 1;
+        transform: translateX(1000px);
+        transition: 1s ease 200ms;
+    }
+    .map .in-viewport{
+        transform: translateX(0);
+    }
+}
