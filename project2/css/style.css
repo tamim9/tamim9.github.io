@@ -668,11 +668,11 @@ body{
     position: fixed;
     right: 20px;
     bottom: 30px;
-    font-size: 20px;
+    font-size: 18px;
     color: whitesmoke;
     background: linear-gradient(var(--global-color), var(--second-color));
     opacity: 0.4;
-    padding: 5px 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     cursor: var(--cursor-pointer);
     z-index: var(--z-top);
@@ -843,7 +843,7 @@ body{
     #topButton{
         bottom: 40px;
         right: 30px;
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
