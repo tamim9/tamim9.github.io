@@ -1,3 +1,7 @@
+
+window.addEventListener("load", function(){document.body.scrollTop = 0; document.documentElement.scrollTop = 0;})
+window.addEventListener("reload", function(){document.body.scrollTop = "none";document.documentElement.scrollTop = none;})
+
 function activeFunction(toggleId,elementId){
     let toggle = document.getElementById(toggleId),
     elemnt = document.getElementById(elementId);
@@ -96,6 +100,10 @@ $(document).ready(function () {
 
 
 
+
+
+
+
 /*Back to top Button*/
 var toTopBut = document.getElementById('topButton');
 
@@ -133,15 +141,13 @@ function navShrink() {
 
 
 
-
-
-
+/*in-viewport function*/
 function inView(){
     var navigateTo = document.getElementsByClassName("i-v");
 
     for(var i = 0; i < navigateTo.length; i++){
-        if(document.body.scrollTop > (navigateTo[i].offsetTop - window.innerHeight) || 
-        document.documentElement.scrollTop > (navigateTo[i].offsetTop - window.innerHeight))
+        if(document.body.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200)) || 
+        document.documentElement.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200)))
         {
             navigateTo[i].classList.add("in-viewport");
         }

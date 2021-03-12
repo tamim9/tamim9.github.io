@@ -271,6 +271,17 @@ body{
     transform: translateX(1000px);
     animation: slideIn 1.5s ease forwards 1s;
 }
+.home_button-wrap{
+    visibility: hidden;
+    transform: matrix(1, 0, 0, 1, -1000, 1);
+    animation: slideIn 1.5s ease forwards 1s;
+}
+@keyframes slideIn{
+    to{
+        visibility: visible;
+        transform: matrix(1, 0, 0, 1, 0, 1);
+    }
+}
 .home_button{
     display: inline-block;
     padding: 10px 40px;
@@ -280,20 +291,16 @@ body{
     cursor: var(--cursor-pointer);
     color: white;
     background: linear-gradient(to bottom right, var(--global-color), var(--second-color), var(--third-color));
-    transition: 500ms;
-    visibility: hidden;
-    transform: translate(-1000px, 0);
-    animation: slideIn 1.5s ease forwards 1s;
 }
 .home_button:hover{
-    transform: translate(0, -10px);
+    opacity: 0.9;
+    animation: butHover 2s ease infinite;
 }
-@keyframes slideIn{
-    to{
-        visibility: visible;
-        transform: translate(0, 0);
-    }
+@keyframes butHover{
+    0%, 100%{transform: translateY(0)}
+    50%{transform: translateY(-10px)}
 }
+
 
 
 
@@ -314,16 +321,17 @@ body{
     color: var(--global-color);
     row-gap: 6rem;
 }
-.service_icon{
+.service_icon i{
     display: inline-block;
     font-size: 50px;
+    text-rendering: optimizeLegibility;
     transition: 100ms;
     background: linear-gradient(var(--global-color), var(--second-color));
     background-clip: text;
     -webkit-background-clip: text;    
     -webkit-text-fill-color: transparent;
 }
-.service_icon:hover{
+.service_icon i:hover{
     transform: scale(1.1);
 }
 .service_details{
@@ -536,8 +544,9 @@ body{
     font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
     background-color: rgba(255, 255, 255, 0.4);
+    cursor: text;
 }
-#contact-message{
+#input-message{
     resize: vertical;
     overflow: auto;
 }
@@ -668,11 +677,11 @@ body{
     position: fixed;
     right: 20px;
     bottom: 30px;
-    font-size: 18px;
+    font-size: 20px;
     color: whitesmoke;
     background: linear-gradient(var(--global-color), var(--second-color));
     opacity: 0.4;
-    padding: 8px 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     cursor: var(--cursor-pointer);
     z-index: var(--z-top);
@@ -843,7 +852,7 @@ body{
     #topButton{
         bottom: 40px;
         right: 30px;
-        font-size: 30px;
+        font-size: 40px;
     }
 }
 
