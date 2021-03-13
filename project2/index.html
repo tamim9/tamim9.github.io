@@ -252,14 +252,22 @@
                 <h2 class="section-title-wrap i-v"><span class="section-title">contact with us</span></h2>
 
                 <form name="contact-form" class="contact_form" netlify>
-                    <label for="input-name"></label>
-                    <input type="text" name="name" placeholder="Name" class="contact_input i-v" id="input-name">
-                    <label for="input-email"></label>
-                    <input type="email" name="email" placeholder="E-mail" class="contact_input i-v" id="input-email" required>
-                    <label for="input-message"></label>
-                    <textarea name="message" placeholder="type your message here" cols="0" rows="10" class="contact_input i-v" id="input-message" required></textarea>
+                    <span class="contact-name-wrapper i-v">
+                        <label for="input-name"></label>
+                        <input type="text" name="name" placeholder="Name" class="contact_input" id="input-name">
+                    </span>
+                    <span class="contact-email-wrapper i-v">
+                        <label for="input-email"></label>
+                        <input type="email" name="email" placeholder="E-mail" class="contact_input" id="input-email" required>
+                    </span>
+                    <span class="contact-message-wrapper i-v">
+                        <label for="input-message"></label>
+                        <textarea name="message" placeholder="type your message here" cols="0" rows="10" class="contact_input" id="input-message" required></textarea>
+                    </span>
 
-                    <input type="submit" value="Submit" class="contact_submit i-v">
+                    <span class="submit-button-wrapper i-v">
+                        <input type="submit" value="Submit" class="contact_submit">
+                    </span>
                 </form>
             </div>
         </section>

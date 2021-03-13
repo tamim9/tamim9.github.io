@@ -1,6 +1,6 @@
-
 window.addEventListener("load", function(){document.body.scrollTop = 0; document.documentElement.scrollTop = 0;})
 window.addEventListener("reload", function(){document.body.scrollTop = "none";document.documentElement.scrollTop = none;})
+
 
 function activeFunction(toggleId,elementId){
     let toggle = document.getElementById(toggleId),
@@ -44,12 +44,26 @@ function linkActiveFunc(navlink, inViewPort){
     }
 }
 window.addEventListener("scroll", () => {
-    linkActiveFunc("contact-link","contact"),
     linkActiveFunc("services-link", "services"),
+    linkActiveFunc("contact-link","contact"),    
     linkActiveFunc("testimonials-link", "testimonials");
 });
 
+function homeLinkFunc2(navlink, inViewPort){
+    var navigateLink = document.getElementById(navlink);
+    var navigateTo = document.getElementById(inViewPort);
 
+    if(document.body.scrollTop >= navigateTo.offsetTop || document.documentElement.scrollTop >= navigateTo.offsetTop){
+        navigateLink.classList.add("active");
+
+        if(document.body.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight) || document.documentElement.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight)){
+            navigateLink.classList.remove("active");
+        }
+    } else{
+        navigateLink.classList.remove("active");
+    }
+}
+setInterval(() => {homeLinkFunc2("home-link","home")}, 1000);
 
 
 //   all ------------------
@@ -146,8 +160,10 @@ function inView(){
     var navigateTo = document.getElementsByClassName("i-v");
 
     for(var i = 0; i < navigateTo.length; i++){
-        if(document.body.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200)) || 
-        document.documentElement.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200)))
+        if(
+            document.body.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200)) || 
+            document.documentElement.scrollTop > (navigateTo[i].offsetTop - (window.innerHeight - 200))
+            )
         {
             navigateTo[i].classList.add("in-viewport");
         }
