@@ -29,6 +29,9 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click',linkAction));
 
 
+setInterval(() => {document.getElementById("home-link").classList.add("active")}, 2000);
+
+
 function linkActiveFunc(navlink, inViewPort){
     var navigateLink = document.getElementById(navlink);
     var navigateTo = document.getElementById(inViewPort);
@@ -48,22 +51,6 @@ window.addEventListener("scroll", () => {
     linkActiveFunc("contact-link","contact"),    
     linkActiveFunc("testimonials-link", "testimonials");
 });
-
-function homeLinkFunc2(navlink, inViewPort){
-    var navigateLink = document.getElementById(navlink);
-    var navigateTo = document.getElementById(inViewPort);
-
-    if(document.body.scrollTop >= navigateTo.offsetTop || document.documentElement.scrollTop >= navigateTo.offsetTop){
-        navigateLink.classList.add("active");
-
-        if(document.body.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight) || document.documentElement.scrollTop > (navigateTo.offsetTop + navigateTo.offsetHeight)){
-            navigateLink.classList.remove("active");
-        }
-    } else{
-        navigateLink.classList.remove("active");
-    }
-}
-setInterval(() => {homeLinkFunc2("home-link","home")}, 1000);
 
 
 //   all ------------------

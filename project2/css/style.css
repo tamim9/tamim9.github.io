@@ -154,12 +154,16 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+#nav_logo-title{
+    cursor: var(--cursor-pointer);
+}
 #nav_logo-sub-title{
     display: inline-block;
     margin-top: 2px;
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.7px;
+    cursor: var(--cursor-pointer);
     background: linear-gradient(to right, var(--global-color), var(--second-color));
     background-clip: text;
     -webkit-background-clip: text;
