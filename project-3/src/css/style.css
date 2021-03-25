@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat:wght@500&family=Averia+Serif+Libre:wght@400&display=swap');
+
+:root{
+    --base-color: #f4511e;
+    --second-color: #FA8C12;
+    --third-color: #DE5E10;
+    --forth-color: #DE2210;
+    --fifth-color: #FA1240;
+    --default-color: rgb(240, 240, 240);
+    --header-height: 65px;
+}
+body{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.section-title{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+
+
+.navbar{
+    padding-bottom: 0 !important;
+    height: var(--header-height);
+}
+.navbar-brand{
+    display: inline-flex  !important;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+.navLogo-img{
+    width: 2rem;
+    border-radius: 10px;
+}
+.navLogo-title{
+    font-size: 1.2rem;
+    font-family: 'Merienda', sans-serif;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+#collapsibleNavbar{
+    border-bottom: 2px solid white;
+}
+.nav{
+    background: linear-gradient(to right bottom, var(--second-color), var(--third-color), var(--base-color), var(--fifth-color));
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.nav-link{
+    color: var(--default-color)  !important;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px 20px  !important;
+}
+.nav-link:hover{
+    color: var(--base-color)  !important;
+    background: rgba(255, 255, 255, 0.8);
+}
+.nav-link.active{
+    background: var(--default-color);
+    color: var(--base-color)  !important;
+}
+.navbar-toggler{
+    outline: 0 !important;
+    border: 0  !important;
+}
+.navbar-toggler .menu-bar{
+    display: none;
+    color: var(--default-color)  !important;
+}
+.navbar-toggler .menu-close{
+    display: inline;
+    font-size: 24px;
+    color: var(--default-color)  !important;
+}
+.dropdown-menu{
+    background: transparent !important;
+}
+.dropdown-item{
+    color: var(--default-color)  !important;
+    text-align: center !important;
+    text-transform: capitalize;
+}
+.dropdown-item:hover{
+    color: var(--base-color)   !important;
+    background: var(--default-color);
+}
+
+/*mobile menu collapsed*/
+.navbar-toggler.collapsed .menu-bar{
+    display: inline;
+}
+.navbar-toggler.collapsed .menu-close{
+    display: none;
+}
+
+
+
+
+#home-wrapper{
+    background: linear-gradient(to right bottom, var(--second-color), var(--third-color), var(--base-color), var(--forth-color), var(--fifth-color));
+    color: whitesmoke;
+    margin: 0;
+    padding: 10rem 2rem;
+    border-radius: 0;
+}
+.home-title{
+    font-size: 2rem;
+    font-family: 'Averia Serif Libre', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home-button{
+    font-size: 16px  !important;
+    text-transform: uppercase;
+}
+
+
+
+.services{
+    padding: 60px 0;
+    text-align: center;
+}
+.service-title{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: var(--forth-color);
+}
+.service_element_wrapper{
+    margin: 5rem 0;
+}
+.cold-calling{
+    background: url('../img/cold-calling.png');
+    background-position: center;
+    background-size: cover;
+}
+.service-wrapper{
+    background: rgba(255, 255, 255, 0.8);
+}
+#service-icon{
+    font-size: 2.2rem;
+    color: var(--forth-color);
+    margin-bottom: 1rem;
+}
+.service-details{
+    text-align: justify;
+    padding: 1rem 2.5rem;
+    text-shadow: 0 0 gray;
+}
+.service-button{
+    text-transform: uppercase;
+    background: var(--forth-color);
+    color: white;
+    padding: 0.7rem 1.7rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.service-button:hover{
+    background: var(--fifth-color);
+    color: white;
+}
+
+
+
+
+@media screen and (min-width: 768px){
+    .dropdown-item{
+        text-align: inherit  !important;
+    }
+    .nav{
+        background: transparent;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    #collapsibleNavbar{
+        transform: translateY(5px);
+        border-bottom: 0;
+    }
+}
