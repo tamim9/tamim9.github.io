@@ -35,8 +35,8 @@
                 <td>Water Damage Companies</td>
                 <td>Minneapolis</td>
                 <td>76</td>
-                <td rowspan="8" class="text-center display-1">776</td>
-                <td rowspan="8" class="text-center display-1">5</td>
+                <td rowspan="8" class="data-amount text-center display-1">776</td>
+                <td rowspan="8" class="work-time text-center display-1">5</td>
             </tr>
             <tr>
                 <th scope="row">14/6</th>
@@ -85,8 +85,8 @@
                 <td>Carpet Cleaning Companies</td>
                 <td>Redwood City</td>
                 <td>65</td>
-                <td rowspan="10" class="text-center display-1">699</td>
-                <td rowspan="10" class="text-center display-1">6.5</td>
+                <td rowspan="10" class="data-amount text-center display-1">699</td>
+                <td rowspan="10" class="work-time text-center display-1">6.5</td>
             </tr>
             <tr>
                 <th scope="row">27/6</th>
@@ -147,8 +147,8 @@
                 <td>Carpet Cleaning Companies</td>
                 <td>Mobile, Alabama</td>
                 <td>30</td>
-                <td rowspan="11" class="text-center display-2">490</td>
-                <td rowspan="11" class="text-center display-1">5</td>
+                <td rowspan="11" class="data-amount text-center display-2">490</td>
+                <td rowspan="11" class="work-time text-center display-1">5</td>
             </tr>
             <tr>
                 <th scope="row">04/7</th>
@@ -214,8 +214,8 @@
                 <td>Glass Companies</td>
                 <td>Orlando & Miami</td>
                 <td>153 & 75 = 228</td>
-                <td rowspan="3" class="text-center display-3">828</td>
-                <td rowspan="3" class="text-center display-2">7.5</td>
+                <td rowspan="3" class="data-amount text-center display-3">828</td>
+                <td rowspan="3" class="work-time text-center display-2">7.5</td>
             </tr>
             <tr>
                 <th scope="row">12/7</th>
@@ -234,8 +234,8 @@
                 <td>Tile Flooring Companies</td>
                 <td>Dallas, TX</td>
                 <td>146</td>
-                <td rowspan="2" class="text-center display-5">436</td>
-                <td rowspan="2" class="text-center display-4">4</td>
+                <td rowspan="2" class="data-amount text-center display-5">436</td>
+                <td rowspan="2" class="work-time text-center display-4">4</td>
             </tr>
             <tr>
                 <th scope="row">13/7</th>
@@ -248,16 +248,16 @@
                 <td>Tile Flooring Companies</td>
                 <td>Jacksonville & Tallahassee & Miami - FL</td>
                 <td>150 & 101 & 151</td>
-                <td class="text-center display-6">402</td>
-                <td class="text-center display-6">4</td>
+                <td class="data-amount text-center display-6">402</td>
+                <td class="work-time text-center display-6">4</td>
             </tr>
             <tr>
                 <th scope="row">15/7</th>
                 <td>Tile Flooring Companies</td>
                 <td>New Orleans & Lake Charles - LA</td>
                 <td>102 & 43</td>
-                <td rowspan="2" class="text-center display-5">295</td>
-                <td rowspan="2" class="text-center display-4">2.5</td>
+                <td rowspan="2" class="data-amount text-center display-5">295</td>
+                <td rowspan="2" class="work-time text-center display-4">2.5</td>
             </tr>
             <tr>
                 <th scope="row">15/7</th>
@@ -270,28 +270,40 @@
                 <td>Tile Flooring Companies</td>
                 <td>Louisiana suburbs</td>
                 <td>100</td>
-                <td class="text-center display-6">100</td>
-                <td class="text-center display-6">1</td>
+                <td class="data-amount text-center display-6">100</td>
+                <td class="work-time text-center display-6">1</td>
             </tr>
             <tr>
                 <th scope="row">19/7</th>
-                <td>Glass & Auto Glass Companies</td>
+                <td>Shower door, Auto Glass & Glass Companies</td>
                 <td>Austin, TX</td>
-                <td>150 + 55</td>
-                <td class="text-center display-6">205</td>
-                <td class="text-center display-6">2.5</td>
+                <td>18 & 97 & 150</td>
+                <td class="data-amount text-center display-6">265</td>
+                <td class="work-time text-center display-6">3.5</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="text-center display-6 fw-bold fs-4">Total = 4,231</td>
-                <td class="text-center display-6 fw-bold fs-3">Total = 38 hours</td>
+                <th scope="row">20/7</th>
+                <td>Shower door & Auto Glass Companies</td>
+                <td>Orlando, FL</td>
+                <td colspan="2" class="data-amount text-center display-6">70</td>
+                <td class="work-time text-center display-6">1</td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+                <td class="text-center display-6 fw-bold fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Total Data Scrapped">
+                    Total = <span id="totalData"></span>
+                </td>
+                <td class="text-center display-6 fw-bold fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Total Time Needed">
+                    Total = <span id="totalTime"></span> hours
+                </td>
             </tr>
         </tbody>
     </table>
-    <h1 class="text-center h1 m-5">Payment = 1900tk <span class="fw-normal">(50tk per hour)</span></h1>
+    <h1 class="text-center h1 m-5" data-bs-toggle="tooltip" data-bs-placement="top" title="50 Taka Per Hour">
+        Payment = <span id="payment"></span> tk
+    </h1>
 
     <footer class="text-center">
         Made by <i class="bi bi-emoji-sunglasses"></i>
@@ -316,6 +328,27 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
+</script>
+
+<script>
+    var totalDataCell = document.getElementById('totalData');
+    var totalTimeCell = document.getElementById('totalTime');
+    var dataAmountCell = document.querySelectorAll('.data-amount');
+    var workedTime = document.querySelectorAll('.work-time');
+
+    function totalFunc(getData, putData) {
+        var total = '';
+        for (var i = 0; i < getData.length; i++) {
+            let d = getData[i].innerHTML;
+            total += '+' + d;
+        }
+        putData.innerHTML = eval(total);
+    }
+    totalFunc(dataAmountCell, totalDataCell);
+    totalFunc(workedTime, totalTimeCell);
+
+    document.getElementById('payment').innerHTML =
+        parseFloat(totalTimeCell.innerHTML) * 50;
 </script>
 
 </html>
