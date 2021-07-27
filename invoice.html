@@ -310,7 +310,11 @@
         </tbody>
     </table>
     <h1 class="text-center h1 m-5" data-bs-toggle="tooltip" data-bs-placement="top" title="50 Taka Per Hour">
-        Payment = <span id="payment"></span> BDT
+        Due Payment = <span id="payment" class="text-danger"></span> BDT
+    </h1>
+    <h1 class="text-center text-muted fs-5 m-5" data-bs-toggle="tooltip" data-bs-placement="top"
+        title="26 July, 2021 | 11:05pm">
+        Paid Payment = 2150 BDT
     </h1>
 
     <footer class="text-center">
@@ -339,24 +343,29 @@
 </script>
 
 <script>
+    var paid = 2150;
     var totalDataCell = document.getElementById('totalData');
     var totalTimeCell = document.getElementById('totalTime');
     var dataAmountCell = document.querySelectorAll('.data-amount');
     var workedTime = document.querySelectorAll('.work-time');
 
     function totalFunc(getData, putData) {
-        var total = '';
+        var total = 0;
         for (var i = 0; i < getData.length; i++) {
             let d = getData[i].innerHTML;
-            total += '+' + d;
+            total = total + parseFloat(d);
         }
-        putData.innerHTML = eval(total);
+        putData.innerHTML = total;
     }
     totalFunc(dataAmountCell, totalDataCell);
     totalFunc(workedTime, totalTimeCell);
 
     document.getElementById('payment').innerHTML =
-        parseFloat(totalTimeCell.innerHTML) * 50;
+        (parseFloat(totalTimeCell.innerHTML) * 50) - paid;
+
+    if (window.innerWidth < 1000) {
+        window.alert('View this webpage in desktop or laptop to get better experience');
+    }
 </script>
 
 </html>
