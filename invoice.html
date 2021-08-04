@@ -14,24 +14,35 @@
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-
 </head>
 
 <body style="min-width:1000px;">
     <table class="table caption-top table-striped table-bordered w-100 border-dark align-middle">
         <caption class="h1 text-center">Payment Invoice of Data Scrap</caption>
         <thead>
-            <tr>
-                <th scope="col">Date <sub></sub></th>
-                <th scope="col">Data Type</th>
-                <th scope="col">City/Area</th>
-                <th scope="col" colspan="2">Amount of Data</th>
-                <th scope="col">Time Needed <sub>(hours)</sub></th>
+            <tr class="position-sticky sticky-top bg-white">
+                <th scope="col" style="padding:0;">
+                    <div class="border border-dark p-2">Date</div>
+                </th>
+                <th scope="col" style="padding:0;">
+                    <div class="border border-dark p-2">Data Type</div>
+                </th>
+                <th scope="col" style="padding:0;">
+                    <div class="border border-dark p-2">City/Area</div>
+                </th>
+                <th scope="col" style="padding:0;" colspan="2">
+                    <div class="border border-dark p-2">Amount of Data</div>
+                </th>
+                <th scope="col" style="padding:0;">
+                    <div class="border border-dark p-2">Time Needed <sub>(hours)</sub></div>
+                </th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc()">Show / Hide</td>
+                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc()"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Click Here to Show or Hide Cells">Show /
+                    Hide</td>
             </tr>
             <tr>
                 <th scope="row">12/6</th>
@@ -299,8 +310,13 @@
                 <td class="data-amount text-center display-6">375</td>
                 <td class="work-time text-center display-6">3</td>
             </tr>
+            <tr class="text-center display-6 fw-bold fs-4">
+                <td colspan="4"></td>
+                <td>Total = 4736</td>
+                <td>Total = 43 <small class="fs-6">hours</small></td>
+            </tr>
 
-            <tr>
+            <tr class="paidRow">
                 <th scope="row">26/7</th>
                 <td colspan="5" class="text-center text-success fw-bold fs-4">Payment Paid</td>
             </tr>
@@ -369,15 +385,31 @@
                 <td class="data-amount text-center display-6">75</td>
                 <td class="work-time text-center display-6">0.7</td>
             </tr>
-            <tr>
+            <tr class="text-center display-6 fw-bold fs-4">
                 <td colspan="4"></td>
-                <td class="text-center display-6 fw-bold fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Total Data Scrapped">
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Data Scrapped">
                     Total = <span id="totalData"></span>
                 </td>
-                <td class="text-center display-6 fw-bold fs-4" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Total Time Needed">
-                    Total = <span id="totalTime"></span> hours
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Time Needed">
+                    Total = <span id="totalTime"></span> <small class="fs-6">hours</small>
+                </td>
+            </tr>
+            <tr class="text-center fw-bold fs-5">
+                <td colspan="4"></td>
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paid Data Scrapped">
+                    Paid = <span id="paidData"></span>
+                </td>
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paid Time">
+                    Paid = <span id="paidTime"></span> <small class="fs-6">hours</small>
+                </td>
+            </tr>
+            <tr class="text-center fw-bold fs-5">
+                <td colspan="4"></td>
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Due Data Scrapped">
+                    Due = <span id="dueData"></span>
+                </td>
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Due Time">
+                    Due = <span id="dueTime"></span> <small class="fs-6">hours</small>
                 </td>
             </tr>
         </tbody>
@@ -416,7 +448,12 @@
 </script>
 
 <script>
-    var paid = 2150;
+    var paidMoney = 2150;
+    var paidDataAmount = 4736;
+    var paidTime = 43;
+    document.getElementById('paidData').innerHTML = paidDataAmount;
+    document.getElementById('paidTime').innerHTML = paidTime;
+
     var totalDataCell = document.getElementById('totalData');
     var totalTimeCell = document.getElementById('totalTime');
     var dataAmountCell = document.querySelectorAll('.data-amount');
@@ -433,21 +470,27 @@
     totalFunc(dataAmountCell, totalDataCell);
     totalFunc(workedTime, totalTimeCell);
 
+
     document.getElementById('payment').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML) * 50) - paid;
+        (parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
 
-    if (window.innerWidth < 1000) {
-        window.alert('View this webpage in desktop or laptop to get better experience');
-    }
+    document.getElementById('dueData').innerHTML =
+        (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
+
+    document.getElementById('dueTime').innerHTML =
+        (parseFloat(totalTimeCell.innerHTML)) - paidTime;
 
 
-    var paid = document.querySelectorAll('tr');
-    for (let i = 2; i <= 42; i++) {
-        paid[i].classList.add('d-none');
+
+    var paidDataRows = document.querySelectorAll('tr');
+    for (let i = 2; i < paidDataRows.length; i++) {
+        if (paidDataRows[i].classList[0] == 'paidRow') { break };
+        paidDataRows[i].classList.add('d-none');
     }
     function showHideFunc() {
-        for (let i = 2; i <= 42; i++) {
-            paid[i].classList.toggle('d-none');
+        for (let i = 2; i < paidDataRows.length; i++) {
+            if (paidDataRows[i].classList[0] == 'paidRow') { break };
+            paidDataRows[i].classList.toggle('d-none');
         }
     }
 </script>
