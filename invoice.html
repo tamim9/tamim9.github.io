@@ -31,6 +31,9 @@
         </thead>
         <tbody>
             <tr>
+                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc()">Show / Hide</td>
+            </tr>
+            <tr>
                 <th scope="row">12/6</th>
                 <td>Water Damage Companies</td>
                 <td>Minneapolis</td>
@@ -435,6 +438,17 @@
 
     if (window.innerWidth < 1000) {
         window.alert('View this webpage in desktop or laptop to get better experience');
+    }
+
+
+    var paid = document.querySelectorAll('tr');
+    for (let i = 2; i <= 42; i++) {
+        paid[i].classList.add('d-none');
+    }
+    function showHideFunc() {
+        for (let i = 2; i <= 42; i++) {
+            paid[i].classList.toggle('d-none');
+        }
     }
 </script>
 
