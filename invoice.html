@@ -16,7 +16,7 @@
 
 </head>
 
-<body style="min-width:1000px;">
+<body style="min-width:1050px;">
     <table class="table caption-top table-striped table-bordered w-100 border-dark align-middle">
         <caption class="h1 text-center">Payment Invoice of Data Scrap</caption>
         <thead>
@@ -319,7 +319,8 @@
 
             <tr class="paidRow">
                 <th scope="row">26/7</th>
-                <td colspan="5" class="text-center text-success fw-bold fs-4">Payment Paid</td>
+                <td colspan="5" class="text-center text-success fw-bold fs-4" style="letter-spacing:40px;">Payment Paid
+                </td>
             </tr>
 
             <tr>
@@ -363,6 +364,18 @@
                 <td class="work-time text-center display-6">0.5</td>
             </tr>
             <tr>
+                <th scope="row" rowspan="2">2/8</th>
+                <td>Tile Cleaning Companies</td>
+                <td rowspan="2">Atlanta, LA suburbs</td>
+                <td>50</td>
+                <td rowspan="2" class="data-amount text-center display-6">100</td>
+                <td rowspan="2" class="work-time text-center display-6">1</td>
+            </tr>
+            <tr>
+                <td>Carpet Cleaning Companies</td>
+                <td>50</td>
+            </tr>
+            <tr>
                 <th scope="row">3/8</th>
                 <td>Tile Flooring Companies</td>
                 <td>Nashville,TN & Columbus,OH</td>
@@ -386,8 +399,38 @@
                 <td class="data-amount text-center display-6">75</td>
                 <td class="work-time text-center display-6">0.7</td>
             </tr>
+            <tr>
+                <th rowspan="2" scope="row">6/8</th>
+                <td>Painting Companies</td>
+                <td rowspan="2">Florida[ Tampa, Miami, Palm Beach ]</td>
+                <td>75 each</td>
+                <td rowspan="2" class="data-amount text-center display-6">450</td>
+                <td rowspan="2" class="work-time text-center display-6">3.8</td>
+            </tr>
+            <tr>
+                <td>Roofing Companies</td>
+                <td>75 each</td>
+            </tr>
             <tr class="text-center display-6 fw-bold fs-4">
-                <td colspan="4"></td>
+
+
+                <td colspan="4" rowspan="3" class="shadow-none">
+                    <h1 class="text-center fw-bold h1 fs-4 mt-5" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="50 Taka Per Hour">
+                        Total Payment = <span id="totalPayment"></span> BDT
+                    </h1>
+                    <h1 class="text-center fw-bold text-muted fs-5 mb-3" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="26 July, 2021 | 11:05pm">
+                        Paid Payment = <span class="text-success">2150</span> BDT
+                    </h1>
+                    <h1 class="text-center fw-bold h1 mb-5" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Hasn't paid yet">
+                        Due Payment = <span id="duePayment" class="text-danger"></span> BDT
+                    </h1>
+                </td>
+
+
+
                 <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Data Scrapped">
                     Total = <span id="totalData"></span>
                 </td>
@@ -396,8 +439,7 @@
                 </td>
             </tr>
             <tr class="text-center fw-bold fs-5">
-                <td colspan="4"></td>
-                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paid Data Scrapped">
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Scrapped data for arrears">
                     Paid = <span id="paidData"></span>
                 </td>
                 <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paid Time">
@@ -405,25 +447,20 @@
                 </td>
             </tr>
             <tr class="text-center fw-bold fs-5">
-                <td colspan="4"></td>
-                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Due Data Scrapped">
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Data Scrapped but payment hasn't cleared yet">
                     Due = <span id="dueData"></span>
                 </td>
-                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Due Time">
+                <td data-bs-toggle="tooltip" data-bs-placement="bottom" title="Time of arrears">
                     Due = <span id="dueTime"></span> <small class="fs-6">hours</small>
                 </td>
             </tr>
         </tbody>
     </table>
-    <h1 class="text-center h1 m-5" data-bs-toggle="tooltip" data-bs-placement="top" title="50 Taka Per Hour">
-        Due Payment = <span id="payment" class="text-danger"></span> BDT
-    </h1>
-    <h1 class="text-center text-muted fs-5 m-5" data-bs-toggle="tooltip" data-bs-placement="top"
-        title="26 July, 2021 | 11:05pm">
-        Paid Payment = 2150 BDT
-    </h1>
 
-    <footer class="text-center">
+
+    <hr class="mt-5">
+    <footer class="text-center fw-bold text-secondary mb-4">
         Made by <i class="bi bi-emoji-sunglasses"></i>
         <span role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Saifur Rahman Tamim">
             SR TAMIM
@@ -435,7 +472,6 @@
             Bootstrap
         </span>
     </footer>
-    <br><br><br>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -472,14 +508,17 @@
     totalFunc(workedTime, totalTimeCell);
 
 
-    document.getElementById('payment').innerHTML =
+    document.getElementById('totalPayment').innerHTML =
+        (parseFloat(totalTimeCell.innerHTML) * 50);
+
+    document.getElementById('duePayment').innerHTML =
         (parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
 
     document.getElementById('dueData').innerHTML =
         (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
 
     document.getElementById('dueTime').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML)) - paidTime;
+        ((parseFloat(totalTimeCell.innerHTML)) - paidTime).toFixed(1);
 
 
 
