@@ -11,9 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
 </head>
 
 <body style="min-width:1050px;">
@@ -411,6 +408,12 @@
                 <td>Roofing Companies</td>
                 <td>75 each</td>
             </tr>
+            <tr>
+                <th scope="row">8/8</th>
+                <td colspan="2">Arranged Hot Leads</td>
+                <td colspan="2" class="data-amount text-center display-6">30</td>
+                <td class="work-time text-center display-6">0.3</td>
+            </tr>
             <tr class="text-center display-6 fw-bold fs-4">
 
 
@@ -423,10 +426,14 @@
                         data-bs-placement="top" title="26 July, 2021 | 11:05pm">
                         Paid Payment = <span class="text-success">2150</span> BDT
                     </h1>
-                    <h1 class="text-center fw-bold h1 mb-5" data-bs-toggle="tooltip" data-bs-placement="top"
+                    <h1 class="text-center fw-bold h1" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Hasn't paid yet">
                         Due Payment = <span id="duePayment" class="text-danger"></span> BDT
                     </h1>
+                    <h5 class="text-uppercase fw-bold text-success mt-3 mb-5">
+                        <span role="button" onclick="window.alert('bKash -- 01785381689\nNagad -- 01721419881')">Pay
+                            Dues</span>
+                    </h5>
                 </td>
 
 
@@ -461,7 +468,7 @@
 
     <hr class="mt-5">
     <footer class="text-center fw-bold text-secondary mb-4">
-        Made by <i class="bi bi-emoji-sunglasses"></i>
+        Made by (ツ)_/¯
         <span role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Saifur Rahman Tamim">
             SR TAMIM
         </span> using
@@ -500,9 +507,13 @@
         var total = 0;
         for (var i = 0; i < getData.length; i++) {
             let d = getData[i].innerHTML;
-            total = total + parseFloat(d);
+            total = (total + parseFloat(d));
         }
-        putData.innerHTML = total;
+        if (total % 1 != 0) {
+            putData.innerHTML = total.toFixed(2);
+        } else {
+            putData.innerHTML = total;
+        }
     }
     totalFunc(dataAmountCell, totalDataCell);
     totalFunc(workedTime, totalTimeCell);
