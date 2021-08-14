@@ -531,10 +531,10 @@
 
 
     document.getElementById('totalPayment').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML) * 50);
+        Math.round(parseFloat(totalTimeCell.innerHTML) * 50);
 
     document.getElementById('duePayment').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
+        Math.round(parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
 
     document.getElementById('dueData').innerHTML =
         (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
