@@ -415,7 +415,7 @@
                 <td class="work-time text-center display-6">0.3</td>
             </tr>
             <tr>
-                <th scope="row">3/8</th>
+                <th scope="row">13/8</th>
                 <td>Commercial Cleaning Companies</td>
                 <td rowspan="2">Ohio{ Cleveland, Columbus }</td>
                 <td>50 each</td>
@@ -423,9 +423,34 @@
                 <td rowspan="2" class="work-time text-center display-6">2.3</td>
             </tr>
             <tr>
-                <th scope="row">3/8</th>
+                <th scope="row">13/8</th>
                 <td>Glass Companies</td>
                 <td>75 each</td>
+            </tr>
+            <tr>
+                <th scope="row">15/8</th>
+                <td>Plastic Surgeon & Gym</td>
+                <td>Denver</td>
+                <td>75 & 75</td>
+                <td class="data-amount text-center display-6">150</td>
+                <td class="work-time text-center display-6">2</td>
+            </tr>
+            <tr>
+                <th scope="row">15/8</th>
+                <td>Plastic Surgeon</td>
+                <td rowspan="2">
+                    Colorado{ Lakewood, Boulder,<br> Fort Collins, Colorado Springs
+                    }
+                </td>
+                <td>25 each</td>
+                <td class="data-amount text-center display-6">100</td>
+                <td rowspan="2" class="work-time text-center display-6">3.8</td>
+            </tr>
+            <tr>
+                <th scope="row">15/8</th>
+                <td>Gym</td>
+                <td>75 each</td>
+                <td class="data-amount text-center display-6">300</td>
             </tr>
             <tr class="text-center display-6 fw-bold fs-4">
                 <td colspan="4" rowspan="3" class="shadow-none">
@@ -442,7 +467,8 @@
                         Due Payment = <span id="duePayment" class="text-danger"></span> BDT
                     </h1>
                     <h5 class="text-uppercase fw-bold text-success mt-3 mb-5">
-                        <span role="button" onclick="window.alert('bKash -- +8801785381689\nNagad -- +8801721419881')">Pay
+                        <span role="button"
+                            onclick="window.alert('bKash -- +8801785381689\nNagad -- +8801721419881')">Pay
                             Dues</span>
                     </h5>
                 </td>
@@ -503,45 +529,77 @@
 </script>
 
 <script>
-    var paidMoney = 2150;
-    var paidDataAmount = 4736;
-    var paidTime = 43;
-    document.getElementById('paidData').innerHTML = paidDataAmount;
-    document.getElementById('paidTime').innerHTML = paidTime;
+    const paidMoney = 2150;
+    const paidDataAmount = 4736;
+    const paidTime = 43;
 
-    var totalDataCell = document.getElementById('totalData');
-    var totalTimeCell = document.getElementById('totalTime');
-    var dataAmountCell = document.querySelectorAll('.data-amount');
-    var workedTime = document.querySelectorAll('.work-time');
+    const totalDataCell = document.getElementById('totalData');
+    const dueDataCell = document.getElementById('dueData');
+    const paidDataCell = document.getElementById('paidData');
 
-    function totalFunc(getData, putData) {
+    const totalTimeCell = document.getElementById('totalTime');
+    const dueTimeCell = document.getElementById('dueTime');
+    const paidTimeCell = document.getElementById('paidTime');
+
+    const dataAmountCell = document.querySelectorAll('.data-amount');
+    const workedTime = document.querySelectorAll('.work-time');
+
+    paidDataCell.innerHTML = paidDataAmount;
+    paidTimeCell.innerHTML = paidTime;
+
+    function totalFunc(getData, returnData, paidAmount, dueCell) {
         var total = 0;
         for (var i = 0; i < getData.length; i++) {
+
             let d = getData[i].innerHTML;
-            total = (total + parseFloat(d));
+
+            if (d.indexOf('.') != -1) {
+                let splitFraction = d.split('.');
+                let fractionCount = splitFraction[1].length;
+
+                // remove fraction by multiplying by 10/100/1000
+                d = parseFloat(d) * Math.pow(10, fractionCount);
+                total = parseFloat(total) * Math.pow(10, fractionCount);
+                total += d;
+                total /= Math.pow(10, fractionCount);
+            }
+            else {
+                total = (total + parseFloat(d));
+            }
         }
-        if (total % 1 != 0) {
-            putData.innerHTML = total.toFixed(2);
-        } else {
-            putData.innerHTML = total;
+        returnData.innerHTML = total;
+
+        // finding due amount
+        if (total.toString().indexOf('.') != -1 || paidAmount.toString().indexOf('.') != -1) {
+            let splitFraction = total.toString().split('.');
+            let fractionCount = splitFraction[1].length;
+
+            // remove fraction by multiplying by 10/100/1000
+            total = parseFloat(total) * Math.pow(10, fractionCount);
+            paidAmount = parseFloat(paidAmount) * Math.pow(10, fractionCount);
+            dueCell.innerHTML = total - paidAmount;
+            dueCell.innerHTML = parseFloat(dueCell.innerHTML) / Math.pow(10, fractionCount);
+        }
+        else {
+            dueCell.innerHTML = total - paidAmount;
         }
     }
-    totalFunc(dataAmountCell, totalDataCell);
-    totalFunc(workedTime, totalTimeCell);
+
+    totalFunc(dataAmountCell, totalDataCell, paidDataAmount, dueDataCell);
+    totalFunc(workedTime, totalTimeCell, paidTime, dueTimeCell);
 
 
     document.getElementById('totalPayment').innerHTML =
-        Math.round(parseFloat(totalTimeCell.innerHTML) * 50);
+        (parseFloat(totalTimeCell.innerHTML) * 50);
 
     document.getElementById('duePayment').innerHTML =
-        Math.round(parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
+        (parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
 
-    document.getElementById('dueData').innerHTML =
-        (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
+    // document.getElementById('dueData').innerHTML =
+    //     (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
 
-    document.getElementById('dueTime').innerHTML =
-        ((parseFloat(totalTimeCell.innerHTML)) - paidTime).toFixed(1);
-
+    // document.getElementById('dueTime').innerHTML =
+    //     ((parseFloat(totalTimeCell.innerHTML)) - paidTime);
 
 
     var paidDataRows = document.querySelectorAll('tr');
