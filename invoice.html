@@ -452,6 +452,42 @@
                 <td>75 each</td>
                 <td class="data-amount text-center display-6">300</td>
             </tr>
+            <tr>
+                <th scope="row">18/8</th>
+                <td>Painters</td>
+                <td rowspan="2">San Diego-CA, Columbus-OH, Cleveland-OH</td>
+                <td>75 each</td>
+                <td class="data-amount text-center display-6">225</td>
+                <td rowspan="2" class="work-time text-center display-6">3.8</td>
+            </tr>
+            <tr>
+                <th scope="row">18/8</th>
+                <td>Roofers</td>
+                <td>75 each</td>
+                <td class="data-amount text-center display-6">225</td>
+            </tr>
+            <tr>
+                <th scope="row">18/8</th>
+                <td>Painters</td>
+                <td rowspan="2">Oceanside-CA, Carlsbad-CA, Encinitas-CA</td>
+                <td>50 each</td>
+                <td class="data-amount text-center display-6">150</td>
+                <td rowspan="2" class="work-time text-center display-6">2.6</td>
+            </tr>
+            <tr>
+                <th scope="row">18/8</th>
+                <td>Roofers</td>
+                <td>50 each</td>
+                <td class="data-amount text-center display-6">150</td>
+            </tr>
+            <tr>
+                <th scope="row">18/8</th>
+                <td>Carpet Cleaning Companies</td>
+                <td>Columbus-OH, Cleveland-OH</td>
+                <td>100 each</td>
+                <td class="data-amount text-center display-6">200</td>
+                <td class="work-time text-center display-6">1.8</td>
+            </tr>
             <tr class="text-center display-6 fw-bold fs-4">
                 <td colspan="4" rowspan="3" class="shadow-none">
                     <h1 class="text-center fw-bold h1 fs-4 mt-5" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -590,10 +626,10 @@
 
 
     document.getElementById('totalPayment').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML) * 50);
+        (parseFloat(totalTimeCell.innerHTML) * 50).toFixed(2);
 
     document.getElementById('duePayment').innerHTML =
-        (parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney;
+        ((parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney).toFixed(2);
 
     // document.getElementById('dueData').innerHTML =
     //     (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
