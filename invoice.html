@@ -17,7 +17,7 @@
     <table class="table caption-top table-striped table-bordered w-100 border-dark align-middle">
         <caption class="h1 text-center">Payment Invoice of Data Scrap</caption>
         <thead>
-            <tr class="position-sticky sticky-top bg-white fs-4">
+            <tr class="position-sticky sticky-top bg-success text-white fs-4">
                 <th scope="col" style="padding:0;">
                     <div class="border border-bottom-0 border-top-0 border-dark p-2">Date</div>
                 </th>
@@ -38,7 +38,7 @@
         </thead>
         <tbody>
             <tr>
-                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc()"
+                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc(2)"
                     data-bs-toggle="tooltip" data-bs-placement="top" title="Click Here to Show or Hide Cells">Show /
                     Hide</td>
             </tr>
@@ -313,13 +313,18 @@
                 <td>Total = 4736</td>
                 <td>Total = 43 <small class="fs-6">hours</small></td>
             </tr>
-
+            <!----------- payment paid ---------------->
             <tr class="paidRow">
                 <th scope="row">26/7</th>
                 <td colspan="5" class="text-center text-success fw-bold fs-4" style="letter-spacing:40px;">Payment Paid
                 </td>
             </tr>
 
+            <tr>
+                <td role="button" colspan="6" class="fw-bold text-center fs-3" onclick="showHideFunc(46)"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Click Here to Show or Hide Cells">Show /
+                    Hide</td>
+            </tr>
             <tr>
                 <th scope="row">29/7</th>
                 <td>Tile Flooring Companies</td>
@@ -539,6 +544,12 @@
                 <td class="data-amount text-center display-6">200</td>
                 <td class="work-time text-center display-6">1.8</td>
             </tr>
+            <tr class="paidRow">
+                <th scope="row">26/7</th>
+                <td colspan="5" class="text-center text-success fw-bold fs-4" style="letter-spacing:40px;">Payment Paid
+                </td>
+            </tr>
+
             <tr class="text-center display-6 fw-bold fs-4">
                 <td colspan="4" rowspan="3" class="shadow-none">
                     <h1 class="text-center fw-bold h1 fs-4 mt-5" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -549,15 +560,14 @@
                         data-bs-placement="top" title="26 July, 2021 | 11:05pm">
                         Paid Payment = <span class="text-success">2150</span> BDT
                     </h1>
-                    <h1 class="text-center fw-bold h1" data-bs-toggle="tooltip" data-bs-placement="top"
+                    <h1 class="text-center fw-bold text-muted fs-5 mb-3" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="4 September, 2021 | 6:24am">
+                        Paid Payment = <span class="text-success">2450</span> BDT
+                    </h1>
+                    <h1 class="text-center fw-bold h1 mb-5" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Hasn't paid yet">
                         Due Payment = <span id="duePayment" class="text-danger"></span> BDT
                     </h1>
-                    <h5 class="text-uppercase fw-bold text-success mt-3 mb-5">
-                        <span role="button"
-                            onclick="window.alert('bKash -- +8801785381689\nNagad -- +8801721419881')">Pay
-                            Dues</span>
-                    </h5>
                 </td>
 
 
@@ -616,9 +626,9 @@
 </script>
 
 <script>
-    const paidMoney = 2150;
-    const paidDataAmount = 4736;
-    const paidTime = 43;
+    const paidMoney = 2150 + 2435;
+    const paidDataAmount = 4736 + 5255;
+    const paidTime = 43 + 48.7;
 
     const totalDataCell = document.getElementById('totalData');
     const dueDataCell = document.getElementById('dueData');
@@ -682,20 +692,20 @@
     document.getElementById('duePayment').innerHTML =
         ((parseFloat(totalTimeCell.innerHTML) * 50) - paidMoney).toFixed(2);
 
-    // document.getElementById('dueData').innerHTML =
-    //     (parseFloat(totalDataCell.innerHTML)) - paidDataAmount;
-
-    // document.getElementById('dueTime').innerHTML =
-    //     ((parseFloat(totalTimeCell.innerHTML)) - paidTime);
 
 
-    var paidDataRows = document.querySelectorAll('tr');
-    for (let i = 2; i < paidDataRows.length; i++) {
-        if (paidDataRows[i].classList[0] == 'paidRow') { break };
-        paidDataRows[i].classList.add('d-none');
+    let paidDataRows = document.querySelectorAll('tr');
+    function hideFunc(startCell) {
+        for (let i = startCell; i < paidDataRows.length; i++) {
+            if (paidDataRows[i].classList[0] == 'paidRow') { break };
+            paidDataRows[i].classList.add('d-none');
+        }
     }
-    function showHideFunc() {
-        for (let i = 2; i < paidDataRows.length; i++) {
+    hideFunc(2);
+    hideFunc(46);
+
+    function showHideFunc(startCell) {
+        for (let i = startCell; i < paidDataRows.length; i++) {
             if (paidDataRows[i].classList[0] == 'paidRow') { break };
             paidDataRows[i].classList.toggle('d-none');
         }
