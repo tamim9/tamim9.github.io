@@ -1,8 +1,25 @@
 <html>
 
+<head>
+    <style>
+        button {
+            font-size: 80px;
+            border: 5px dashed orangered;
+            color: orangered;
+            background: white;
+            padding: 20px 40px;
+            margin: 100px 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: hsl(40, 100%, 91%);
+        }
+    </style>
+</head>
+
 <body style="text-align:center">
-    <button onclick="copyText()"
-        style="font-size:80px; border:5px dashed orangered; color:orangered; background:white; padding: 20px 40px; margin:100px 0">
+    <button onclick="copyText()">
         Copy message
     </button>
 </body>
@@ -12,7 +29,7 @@
         for (let i = 1; i <= 100; i++) {
             message += "Hello Friend " + i + "\n"
         }
-        navigator.clipboard.writeText(message)
+        navigator.clipboard.writeText(message).then(() => alert("Copied"))
     }
 </script>
 
