@@ -1,0 +1,19 @@
+<html>
+
+<body style="text-align:center">
+    <button onclick="copyText()"
+        style="font-size:80px; border:5px dashed orangered; color:orangered; background:white; padding: 20px 40px; margin:100px 0">
+        Copy message
+    </button>
+</body>
+<script>
+    function copyText() {
+        let message = ""
+        for (let i = 1; i <= 100; i++) {
+            message += "Hello Friend " + i + "\n"
+        }
+        navigator.clipboard.writeText(message)
+    }
+</script>
+
+</html>
