@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>asd - Puerto Family Tree</title>
+
+	<meta name="title" content="asd - Puerto Family Tree">
+	<meta name="description" content="Make your family tree live with Puerto Family Tree and do not leave it just a memory hanging. build it with the participation of everyone and make it stretch to infinity.">
+	<meta name="keywords" content="family tree, puerto family tree, family builder, family tree maker">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="puertokhalid.com">
+	<meta property="og:title" content="asd - Puerto Family Tree">
+	<meta property="og:description" content="Make your family tree live with Puerto Family Tree and do not leave it just a memory hanging. build it with the participation of everyone and make it stretch to infinity.">
+	<meta property="og:image" content="puertokhalid.com">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="puertokhalid.com">
+	<meta property="twitter:title" content="asd - Puerto Family Tree">
+	<meta property="twitter:description" content="Make your family tree live with Puerto Family Tree and do not leave it just a memory hanging. build it with the participation of everyone and make it stretch to infinity.">
+	<meta property="twitter:image" content="puertokhalid.com">
+
+	<!-- Google Fonts -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,900%7CGentium+Basic:400italic&subset=latin,latin">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700">
+	<link href="//fonts.googleapis.com/css?family=Coda+Caption:800|Poppins|Squada+One|Sriracha&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/afa76a1ba0.js" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://family3.de/css/bootstrap.min.css" />
+
+  <!-- Font Awseome -->
+	<link rel="stylesheet" href="http://family3.de/css/all.min.css">
+
+	<!-- jConfirm plugin -->
+	<link rel="stylesheet" href="http://family3.de/css/jquery-confirm.min.css">
+
+	<!-- jQuery Datepicker plugin -->
+	<link rel="stylesheet" href="http://family3.de/css/datepicker.min.css">
+
+	<!-- jQuery Lightbox plugin -->
+	<link rel="stylesheet" href="http://family3.de/css/lightbox.css" />
+
+	<!-- jQuery File input plugin -->
+	<link rel="stylesheet" href="http://family3.de/css/fileinput.css" />
+
+	<!-- Basic Style for Tags Input -->
+	<link rel="stylesheet" href="http://family3.de/css/amsify.suggestags.css">
+
+	<!-- Flag Icon -->
+	<link rel="stylesheet" href="http://family3.de/css/flag-icon.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="http://family3.de/css/style.css">
+
+		
+	<style>
+		.pt-header-menu .pt-logo,
+		.pt-tree h3 span,
+		.pt-header-menu .pt-search button,
+		.pt-pageplans .alert-success {
+			background: #ffc107;
+		}
+		.pt-pageplans .alert-success span {
+			color: #ffc107;
+		}
+		.pt-nav-menu,
+		.pt-pagination li.pt-active,
+		.pt-mnewmember button[type=submit],
+		.pt-pageplans .pt-plans .col:nth-of-type(2) .pt-plan,
+		.pt-pageplans .pt-plans .pt-plan button {
+			background: #3b5245;
+			border-color: #3b5245;
+			box-shadow: 4px 1px 6px #3b524545;
+		}
+		.pt-nav-menu ul li:first-of-type a:hover,
+		.pt-nav-menu ul li a:hover {
+			background: #ffffff;
+    	color: #ffc107;
+		}
+		.tree ul li a:not([href]):hover,
+		.tree ul li a:not([href]):hover .pt-thumb,
+		.pt-list .pt-title span,
+		.pt-list-item .pt-thumb {
+			box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b5245;
+		}
+        
+        
+        .tree ul li a.male,	 .tree ul li a.male .pt-thumb	 {
+			box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #705ef0;
+		}
+        .tree ul li a.female,	 .tree ul li a.female .pt-thumb	 {
+			box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #e190cd;
+		}
+        
+		.pt-nav-menu ul li a:hover b,
+		.pt-index-right button {
+			background: #3b5245;
+			box-shadow: 0px 0px 7px #3b524545;
+		}
+		body, .pt-sm {
+			background: #ffffff;
+		}
+		.pt-tree a.exp {
+			background: #000;
+			border: 1px solid #000;
+		}
+		.pt-tree a.exp .pt-thumb {
+			border: 3px solid #000;
+		}
+		.pt-header-menu .pt-list-menu .pt-notifi a.pt-notyshow {
+			color: #3b5245;
+		}
+		.pt-nav-menu ul li a,
+		.pt-list-item h3 a,
+		.pt-index-left h2 {
+			color: #ffc107;
+		}
+		#myTree .pt-item-details .pt-item-body .pt-name {
+			color: #3742b8;
+		}
+		#myTree .pt-item-details.female .pt-name {
+			color: #f46dd2;
+		}
+		.pt-header-menu .pt-list-menu .pt-new-tree a {
+			background: #fb2a4e;
+			box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #fb2a4e;
+		}
+		.pt-header-menu .pt-list-menu .pt-new-tree a:hover {
+	    box-shadow: 0 0 0 2px #FFF, 0 0 0 3px #fb2a4e;
+		}
+		.pt-header-menu .pt-list-menu .pt-dash a {
+			background: #fb2a4e;
+			box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #fb2a4e;
+		}
+		.pt-header-menu .pt-list-menu .pt-dash a:hover {
+	    box-shadow: 0 0 0 2px #FFF, 0 0 0 3px #fb2a4e;
+		}
+		.pt-form input[type=text], .pt-form input[type=password], .pt-form select,
+		.amsify-suggestags-area .amsify-suggestags-input-area,
+		.pt-index-right #resetM input {
+			background: #ffffff;
+			border-bottom: 2px solid #3b5245;
+		}
+		.pt-form .pt-input i, .pt-form .pt-input svg,
+		.pt-pagination li,
+		.pt-index-left p,
+		.pt-index-right .reset a,
+		.pt-index-right #resetM label i {
+			color: #3b5245;
+		}
+		.bg-0, .pt-flist .more {
+			background: #3b5245;
+			box-shadow: 0px 0px 7px #3b524545;
+		}
+		.pt-list-item {
+			border: 1px solid #3b524556;
+			box-shadow: 0 0 10px #3b524526;
+		}
+		.pt-tree h3 {
+			background: #679ff7;
+		}
+		.pt-index-right h3 a.active {
+    	border-bottom: 2px solid #3b5245;
+    	color: #3b5245;
+		}
+	</style>
+</head>
+<body class="pt-login pt-pagetree">
+
+<div class="pt-header-menu">
+	<div class="pt-logo">
+		<i class="fas fa-tree"></i>
+	</div>
+	<div class="pt-search">
+		<input type="text" name="search" placeholder="Search for family..." />
+		<button type="submit"><i class="fas fa-search"></i></button>
+		<div class="sresults"></div>
+	</div>
+	<div class="pt-list-menu">
+		<div class="pt-lang">
+			<a class="pt-slang" rel="1"><i class="flag-icon flag-icon-squared flag-icon-us"></i> English</a>			<ul>
+				<li><a class="pt-changelang" rel="1"><i class="flag-icon flag-icon-squared flag-icon-us"></i> English</a></li>			</ul>
+		</div>
+
+			<div class="pt-dash">
+			<a href="http://family3.de/dashboard"><i class="fas fa-cog"></i></a>
+		</div>
+				<div class="pt-notifi">
+			<a href="#" class="pt-notyshow">
+				<i class="far fa-bell"></i><b>0</b>
+			</a>
+			<ul class="pt-drop">
+				<li class="no-not">No notifications</li>			</ul>
+		</div>
+		<div class="pt-new-tree">
+			<a href="#" data-toggle="modal" data-target="#addnewtree"><i class="fas fa-plus-circle"></i> Create a tree</a>
+		</div>
+		
+		<div class="pt-thumb">
+			<img src="" onerror="this.src='http://family3.de/images/no_profile_pic.jpg'" />
+		</div>
+		<span>test</span>
+	</div>
+</div>
+
+<div class="pt-nav-menu">
+	<ul>
+		<li><a href="http://family3.de/index"><i class="fas fa-home"></i><b>Home</b></a></li>
+				<li class="pt-mobile-dash"><a href="http://family3.de/dashboard"><i class="fas fa-cog"></i><b>Dashboard</b></a></li>
+				<li><a href="http://family3.de/users/all"><i class="far fa-user-circle"></i><b>Users</b></a></li>
+		<li><a href="http://family3.de/families/all"><i class="fas fa-sitemap"></i><b>Family Trees</b></a></li>
+				<li><a href="http://family3.de/plans.php"><i class="fas fa-trophy"></i><b>Plans</b></a></li>
+						<li><a href="http://family3.de/page/2"><i class="far fa-question-circle"></i><b>About us</b></a></li>
+				<li><a href="http://family3.de/page/1"><i class="far fa-envelope-open"></i><b>Contact us</b></a></li>
+										<li><a href="http://family3.de/user/details"><i class="far fa-address-card"></i><b>Your Details</b></a></li>
+		<li><a href="#" class="logout"><i class="fas fa-power-off"></i><b>Logout!</b></a></li>
+			</ul>
+</div>
+
+
+<!-- New Tree -->
+<div class="modal fade" id="addnewtree" tabindex="-1" role="dialog" aria-labelledby="addnewtreeLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addnewtreeLabel">Family Tree</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+								<form class="pt-form" id="send-family-details">
+					<label>Family ID:</label>
+					<div class="pt-input">
+						<i class="far fa-user"></i>
+						<input type="text" name="name" placeholder="Write your family ID">
+					</div>
+					<label>Managers (Only Usernames):</label>
+					<div class="pt-input">
+						<i class="fas fa-cogs"></i>
+						<input type="text" class="form-control" name="planets" value="">
+					</div>
+										<div class="pt-input">
+						<label class="small">
+							<input type="checkbox" name="check" > Can everyone see this family (public view)						</label>
+					</div>
+					<label>View Password:</label>
+					<div class="pt-input">
+						<i class="fas fa-lock"></i>
+						<input type="password" name="vpass" placeholder="Write your view password">
+					</div>
+										<input type="hidden" name="famid" value="" />
+					<hr />
+					<button type="submit" class="pt-button bg-0"><i class="fas fa-sign-in-alt"></i> Send Details</button>
+				</form>
+				
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pt-wrapper">
+
+	
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+			<form id="send-newmember" class="pt-mnewmember">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Add New member</h4>
+	      </div>
+                
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>                        
+<script>
+  $(document).ready(function(){
+        $("#submit_bt").click(function(event){
+           if($(".first_name").val() =='' && $(".middle_name").val() =='' && $(".last_name").val() ==''){
+           $(".requried_fields").prop('required',true);
+       }
+       else{
+         $(".requried_fields").prop('required','');  
+       }
+      })
+   $(".requried_fields").keyup(function(){
+       if($(this).val() ==''){
+           $(".requried_fields").prop('required',true);
+       }
+       else{
+         $(".requried_fields").prop('required','');  
+       }
+   })
+})  
+</script>       
+                
+                
+				      	<div class="modal-body">
+					<div class="pt-form pt-forms">
+					  <!-- Nav tabs -->
+					  <ul class="nav nav-tabs" role="tablist">
+					    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Personal</a></li>
+					    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Contact</a></li>
+					    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Biographical</a></li>
+					    <li role="presentation"><a href="#pics" aria-controls="pics" role="tab" data-toggle="tab">Pictures</a></li>
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active" id="home">
+								<label class="link-u">Link this member to a user: <input type="text" class="form-control" name="user" value=""></label>
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											First Name::
+											<input type="text" value="" placeholder="Enter first name" class="requried_fields" name="firstname" required/>
+										</label>
+									</div>
+									<div class="col-md-6">
+										<label>
+											Middle Name::
+											<input type="text" value="" placeholder="Enter middle name" class="requried_fields" name="middlename" required/>
+										</label>
+									</div>
+                                    <div class="col-md-6">
+										<label>
+											Last Name:
+											<input type="text" value="" placeholder="Enter last name" class="requried_fields" name="lastname" required/>
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<label>Gender:</label>
+										<label class="pt-inline"><input type="radio" name="gender" value="1" required/> Female</label>
+										<label class="pt-inline"><input type="radio" name="gender" value="2" /> Male</label>
+									</div>
+									<div class="col">
+										<label>Relation Type:</label>
+										<select name="type">
+											<option value="1">Child</option>
+											<option value="2">Partner</option>
+											<option value="3">Ex-Partner</option>
+											<option value="4">Parent</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col">
+										<label>
+											Birth Date:<br />
+											<input type="text" name="birthdate" value="" placeholder="00/00/0000" class="datepicker-here" data-language='en' data-position='top left' />
+										</label>
+									</div>
+										<div class="col">
+											<label>
+												Mariage Date:<br />
+												<input type="text" name="mariagedate" value="" placeholder="00/00/0000" class="datepicker-here" data-language='en' data-position='top left' />
+											</label>
+										</div>
+											<div class="col">
+												<label>
+													Death Date:<br />
+													<input type="text" name="deathdate" value="" placeholder="00/00/0000" class="datepicker-here" data-language='en' data-position='top left' />
+												</label>
+											</div>
+								</div>
+
+								<label><input type="checkbox" name="death" value="1" checked /> This person is alive</label>
+								<label>
+									Photo:
+									<input type="text" value="" placeholder="Enter Photo URL" name="photo" />
+								</label>
+								<div class="prt-group">
+									<input type="file" name="poll_file" id="file" class="inputfile" />
+									<label for="file"><i class="fa fa-upload"></i> Choose an image from your device</label>
+								</div>
+								<div class="form-group"><label>Or choose an avatar instead:</label></div>
+								<div class="form-avatar">
+								<div class="form-inline">
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="1" id="sradioe1" class="choice image">
+										<label for="sradioe1"><b><img src="http://family3.de/images/avatar/1.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="2" id="sradioe2" class="choice image">
+										<label for="sradioe2"><b><img src="http://family3.de/images/avatar/2.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="3" id="sradioe3" class="choice image">
+										<label for="sradioe3"><b><img src="http://family3.de/images/avatar/3.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="4" id="sradioe4" class="choice image">
+										<label for="sradioe4"><b><img src="http://family3.de/images/avatar/4.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="5" id="sradioe5" class="choice image">
+										<label for="sradioe5"><b><img src="http://family3.de/images/avatar/5.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="6" id="sradioe6" class="choice image">
+										<label for="sradioe6"><b><img src="http://family3.de/images/avatar/6.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="7" id="sradioe7" class="choice image">
+										<label for="sradioe7"><b><img src="http://family3.de/images/avatar/7.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="8" id="sradioe8" class="choice image">
+										<label for="sradioe8"><b><img src="http://family3.de/images/avatar/8.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="9" id="sradioe9" class="choice image">
+										<label for="sradioe9"><b><img src="http://family3.de/images/avatar/9.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="10" id="sradioe10" class="choice image">
+										<label for="sradioe10"><b><img src="http://family3.de/images/avatar/10.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="11" id="sradioe11" class="choice image">
+										<label for="sradioe11"><b><img src="http://family3.de/images/avatar/11.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="12" id="sradioe12" class="choice image">
+										<label for="sradioe12"><b><img src="http://family3.de/images/avatar/12.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="13" id="sradioe13" class="choice image">
+										<label for="sradioe13"><b><img src="http://family3.de/images/avatar/13.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="14" id="sradioe14" class="choice image">
+										<label for="sradioe14"><b><img src="http://family3.de/images/avatar/14.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="15" id="sradioe15" class="choice image">
+										<label for="sradioe15"><b><img src="http://family3.de/images/avatar/15.jpg" /></b></label>
+									</div>
+																		<div class="form-group">
+										<input type="radio" name="avatar" value="16" id="sradioe16" class="choice image">
+										<label for="sradioe16"><b><img src="http://family3.de/images/avatar/16.jpg" /></b></label>
+									</div>
+																	</div>
+								</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="profile">
+								<label>
+									Facebook:
+									<input type="text" value="" placeholder="Enter Facebook" name="facebook" />
+								</label>
+								<label>
+									Twitter:
+									<input type="text" value="" placeholder="Enter Twitter" name="twitter" />
+								</label>
+								<label>
+									Instagram:
+									<input type="text" value="" placeholder="Enter Instagram" name="instagram" />
+								</label>
+								<label>
+									Email:
+									<input type="text" value="" placeholder="Enter Email" name="email" />
+								</label>
+								<label>
+									Website:
+									<input type="text" value="" placeholder="Enter Website" name="site" />
+								</label>
+								<label>
+									Home Tel:
+									<input type="text" value="" placeholder="Enter Home Tel" name="tel" />
+								</label>
+								<label>
+									Mobile:
+									<input type="text" value="" placeholder="Enter Mobile" name="mobile" />
+								</label>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="messages">
+								<label>
+									Birth Place:
+									<input type="text" value="" placeholder="Enter Birth Place" name="birthplace" />
+								</label>
+								<label>
+									Death Place:
+									<input type="text" value="" placeholder="Enter Death Place" name="deathplace" />
+								</label>
+								<label>
+									Profession:
+									<textarea name="profession" placeholder="Enter Profession"></textarea>
+								</label>
+								<label>
+									Company:
+									<textarea name="company" placeholder="Enter Company"></textarea>
+								</label>
+								<label>
+									Interests:
+									<textarea name="interests" placeholder="Enter Interests"></textarea>
+								</label>
+								<label>
+									Bio Notes:
+									<textarea name="bio" placeholder="Enter Bio Notes"></textarea>
+								</label>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="pics">
+																<input id="images" name="images[]" type="file" multiple>
+													    </div>
+					  </div>
+					</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id ="submit_bt">Submit</button>
+				<input type="hidden" name="parent" value="" />
+				<input type="hidden" name="id" value="" />
+				<input type="hidden" name="nid" value="" />
+      </div>
+				</form>
+    </div>
+  </div>
+</div>
+<!-- Modal View Member  -->
+<div class="modal fade" id="heritageM" tabindex="-1" role="dialog" aria-labelledby="heritageMLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form id="send-newheritage" class="pt-mnewmember">
+			<div class="modal-header">
+				<h5 class="modal-title">Heritage a family                     :</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+						<div class="modal-body">
+				<label class="link-u">
+					Link this momber as a parent of family:					<input type="text" class="form-control" name="heritage" value="">
+				</label>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<input type="hidden" name="member" value="" />
+				<input type="hidden" name="family" value="1" />
+			</div>
+						</form>
+		</div>
+	</div>
+</div>
+
+<div class="pt-tree">
+	<div class="pt-details">
+								<a class="pt-edit" rel="1"><i class="fas fa-pencil-alt"></i> <span>Edit</span></a>
+						<a href="#" data-name="asd" class="pdf-download"><i class="fas fa-link"></i> Export PDF</a>
+												<div class="pl-share">
+      <span class="pl-share-button"><i class="fa fa-share"></i> <b>Share</b></span>
+      <ul class="dropdown">
+				<li>
+					<a class="bg-facebook" href="//www.facebook.com/sharer/sharer.php?u=http://family3.de/tree/asd/1" target="_blank">
+						<i class="fab fa-facebook-f"></i> Share on Facebook					</a>
+				</li>
+				<li>
+					<a class="bg-twitter" href="//twitter.com/home?status=http://family3.de/tree/asd/1 asd" target="_blank">
+						<i class="fab fa-twitter"></i> Share on Twitter					</a>
+				</li>
+				<li>
+					<a class="bg-whatsapp" href="whatsapp://send?text=http://family3.de/tree/asd/1" target="_blank">
+						<i class="fab fa-whatsapp"></i> Share on Whatsapp					</a>
+				</li>
+				<li>
+					<a class="bg-youtube"href="mailto:?Subject=asd&amp;Body=asd http://family3.de/tree/asd/1">
+						<i class="fas fa-envelope-open-text"></i> Send in Email					</a>
+				</li>
+			</ul>
+  	</div>
+	</div>
+	<h3><span><i class="fas fa-grin-stars"></i></span> asd's Family Tree:</h3>
+	<div class="pt-sm">
+		<div class="tree" id="div">
+						<ul>
+				<li class=" active"><a class=" female active"><div class="pt-shoow" rel="item-1">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong> </strong><br\><p id="lastname"><strong>asd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="1"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="1"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="1"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="1" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(1,'','left');" class="a_left" rel="1" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(1,'','right');" class="a_left" rel="1" "><i class="fa-solid fa-arrow-right"></i></b></span></a><ul><li class=" "><a class="partner hid"></a><a class=" male "><div class="pt-shoow" rel="item-2">
+	
+	<span class="pt-dead"><i class="fas fa-sad-cry"></i> R.I.P</span><div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong> </strong><br\><p id="lastname"><strong>asa</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="2"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="2"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="2"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="2" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(2,'2','left');" class="a_left" rel="2" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(2,'2','right');" class="a_left" rel="2" "><i class="fa-solid fa-arrow-right"></i></b></span></a><a rel="item-18" class="partner exp">
+			
+				<div class="pt-thumb">
+					<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+				</div>
+					<strong>Vh </strong><br\><strong></strong><span class="pt-options">
+						<b class="tree-edit" rel="18"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="18"><i class="far fa-trash-alt"></i></b>
+					</span></a><ul><li class=" "><a class=" female "><div class="pt-shoow" rel="item-3">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>asd </strong><br\><p id="lastname"><strong></strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="3"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="3"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="3"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="3" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(3,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="3" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(3,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="3" "><i class="fa-solid fa-arrow-right"></i></b></span></a><ul><li class=" "><a class=" female "><div class="pt-shoow" rel="item-4">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>asdasd </strong><br\><p id="lastname"><strong>sad</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="4"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="4"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="4"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="4" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(4,'4','left');" class="a_left" rel="4" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(4,'4','right');" class="a_left" rel="4" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li></ul></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-5">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>ad </strong><br\><p id="lastname"><strong></strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="5"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="5"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="5"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="5" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(5,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="5" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(5,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="5" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-6">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong></strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="6"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="6"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="6"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="6" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(6,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="6" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(6,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="6" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-7">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awdaw</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="7"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="7"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="7"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="7" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(7,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="7" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(7,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="7" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-8">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="8"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="8"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="8"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="8" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(8,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="8" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(8,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="8" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-9">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="9"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="9"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="9"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="9" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(9,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="9" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(9,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="9" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-10">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="10"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="10"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="10"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="10" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(10,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="10" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(10,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="10" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-11">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="11"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="11"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="11"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="11" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(11,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="11" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(11,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="11" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-12">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>awd awd</strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="12"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="12"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="12"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="12" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(12,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="12" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(12,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="12" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-13">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong>awd awd</strong><br\><p id="lastname"><strong></strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="13"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="13"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="13"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="13" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(13,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="13" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(13,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="13" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-14">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong> awd</strong><br\><p id="lastname"><strong></strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="14"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="14"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="14"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="14" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(14,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="14" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(14,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="14" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" male "><div class="pt-shoow" rel="item-15">
+	
+	<div class="pt-thumb femaile ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/maleface.png'" />
+		</div><strong> awd</strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="15"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="15"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="15"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="15" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(15,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="15" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(15,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="15" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li><li class=" "><a class=" female "><div class="pt-shoow" rel="item-16">
+	
+	<div class="pt-thumb male ">
+			<img src="http://family3.de/" onerror="this.src='http://family3.de/images/femaleface.png'" />
+		</div><strong>awd </strong><br\><p id="lastname"><strong>awd</strong></p></div><span class="pt-options" style="top: -25px;">
+				<b class="tree-edit" rel="16"><i class="fas fa-pencil-alt"></i></b>
+						<b class="tree-delete" rel="16"><i class="far fa-trash-alt"></i></b>
+						<b class="tree-add" rel="16"><i class="fas fa-plus" data-toggle="modal" data-target="#myModal"></i></b>
+						<b class="tree-add-fams" rel="16" data-toggle="modal" data-target="#heritageM"><i class="fas fa-users"></i></b>
+                        <b onclick="st_loop(16,'3,5,6,7,8,9,10,11,12,13,14,15,16','left');" class="a_left" rel="16" "><i class="fa-solid fa-arrow-left"></i></b>
+                         <b  onclick="st_loop(16,'3,5,6,7,8,9,10,11,12,13,14,15,16','right');" class="a_left" rel="16" "><i class="fa-solid fa-arrow-right"></i></b></span></a></li></ul></li></ul></li>			</ul>
+					</div>
+	</div>
+</div>
+
+
+<!-- Modal View Member  -->
+<div class="modal fade" id="myTree" tabindex="-1" role="dialog" aria-labelledby="myTreeLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
+
+
+
+	<div class="pt-footer">
+		<div class="pt-container">
+				Copyright © 2020 <a href="http://family3.de">Puerto Family Tree</a>. All Rights Reserved.<br>
+				Programming and design by <a href="http://puertokhalid.com" target="_blanc">Puerto Khalid</a>.
+		</div>
+	</div>
+</div>
+
+
+<!-- jQuery Library -->
+<script>
+function st_loop(current_id,other_iid_s,dir){
+	if(!dir){
+		dir='left';
+	}
+	
+  if (true || confirm('Do you want really switch the person?') == true) {
+    var post="data=st_loop&current="+current_id+'&other_id='+other_iid_s+'&dir='+dir;
+serve_ajax(post,"st_loop");
+  } 
+
+}
+
+function serve_ajax(post,task,extra,enctype){
+	// post: 
+	link=location.href;
+	var domain=(new URL(link))
+	link=domain.origin+'/Algan/loop_ajax.php';
+	//the  family3 is for yyou sub foolder oki? ok
+	// clear msg box text 
+	var xhttp;
+	if (window.XMLHttpRequest) {
+		xhttp = new XMLHttpRequest();
+	} 
+	else {
+		/*  code for IE6, IE5 */
+		xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhttp.onreadystatechange = function(){server_ready(this,task,extra);};
+	xhttp.open("POST", link, true);
+	if(!enctype){
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	}
+	xhttp.send(post);
+}
+// send data
+
+function server_ready(data,task,extra){
+	if (data.readyState == 4 && data.status == 200) {
+        var response=data.responseText;
+		// alert('Data Changed');
+		location.reload();
+		// uncommentt them  when all done
+        
+    }
+}
+// server ready function 
+
+
+</script>
+<script src="http://family3.de/js/jquery.min.js"></script>
+<script src="http://family3.de/js/popper.min.js"></script>
+<script src="http://family3.de/js/bootstrap.min.js"></script>
+<script src="http://family3.de/js/jquery.livequery.js"></script>
+<script src="http://family3.de/js/jquery-confirm.min.js"></script>
+<script src="http://family3.de/js/fileinput.min.js"></script>
+<script src="http://family3.de/js/lightbox.js"></script>
+<script src="http://family3.de/js/datepicker.min.js"></script>
+<script src="http://family3.de/js/datepicker.en.js"></script>
+<script src="http://family3.de/js/Chart.min.js"></script>
+<script src="http://family3.de/js/jquery.uploader.js"></script>
+<script src="http://family3.de/js/jspdf.min.js"></script>
+<script src="http://family3.de/js/html2canvas.js"></script>
+<script src="http://family3.de/js/panzoom.min.js"></script>
+<script src="http://family3.de/js/jquery.amsify.suggestags.js"></script>
+
+
+<script> var path = 'http://family3.de',  nophoto = 'http://family3.de/images/no_profile_pic.jpg', femaleface = 'http://family3.de/images/femaleface.png', maleface = 'http://family3.de/images/maleface.png', lang = {"rtl":"rtl_false","lang":"en","success":"Success!","error":"Error!","rip":"R.I.P","no-result":"No Result Found!","submit":"Submit","close":"Close","header":{"welcome":"Welcome!","search":"Search for family...","home":"Home","family":"Family Trees","plans":"Plans","about":"About Us","contact":"Contact Us","details":"Your Details","logout":"Logout!","no-not":"No notifications","newtree":"Create a tree","dashboard":"Dashboard","users":"Users","fam":"Family Tree","fammanag":"Managers (Only Usernames):","emailver":"Email verification:"},"plans":{"title":"Simple Pricing for Everyone!","desc":"Pricing is built for businesses of all sizes. Always know what you'll pay. <br \/>All plans come with a 100% money-back guarantee.","month":"\/per month","btn":"Get Started"},"indexpage":{"h4":"Building Family Tree.","h2":"Who are they?","p":"Make your family tree live with Puerto Family Tree and do not leave it just a memory hanging. build it with the participation of everyone and make it stretch to infinity.","form_b":"More than just a family tree.","form_s":"A new home for family memories","form_login":"Login","form_register":"Register","form_fid_l":"Family ID:","form_fid_i":"Write your family ID","form_pass_l":"Password:","form_pass_i":"Write your password","form_npass_l":"New Password:","form_npass_i":"Write your new password","form_vpass_l":"View Password:","form_vpass_i":"Write your view password","form_email_l":"Email:","form_email_i":"Write your email","form_in":"Sign In","form_up":"Sign Up","form_view":"Can everyone see this family (public view)","my":"My Family Tree","list":"List Of the trees you manage!","more":"More Results!","forget":"Forget your password?","reset":"Reset it now","pravicy":"Pravicy policy","byclick":"By clicking in 'Sign up' button you are automaticly accepting in our {a}, don't hasitate to read it first!"},"treepage":{"vp_t":"View Password :","vp_p":"We are sorry to inform you that, this family isn't public view. you need to have password view to show it.","vp_i":"Write the view password","vp_b":"Submit","edit":"Edit","new":"New Member","link":"Tree Link","fam":"'s Family Tree:","share":"Share","share_f":"Share on Facebook","share_t":"Share on Twitter","share_w":"Share on Whatsapp","share_e":"Send in Email","pdf":"Export PDF"},"heritage":{"title":"Heritage a family                     :","link":"Link this momber as a parent of family:"},"detailspage":{"title":"Manege your details","send":"Send Details","username":"Your Username","username_l":"Write your username","image_n":"No image chosen...","image_c":"Choose Image"},"resetpage":{"title1":"Reset your password:","email":"Your Registred Email Address","title":"Reset new password :","npass":"New Password       :","npass_l":"type your password","rpass":"Re-Password        :","rpass_l":"type your re-password"},"listpage":{"title":"Famelie Tree List","no-result":"No Result Found!","members":"Members","my":"My Trees","edit":"Edit"},"timedate":{"time_second":"second","time_minute":"minute","time_hour":"hour","time_day":"day","time_week":"week","time_month":"month","time_year":"year","time_decade":"decade","time_ago":"ago"},"newmember":{"title":"Add New member","personal":"Personal","contact":"Contact","biographical":"Biographical","pictures":"Pictures","link":"Link this member to a user:","first":"First Name:","middle":"Middle Name:","last":"Last Name","gender":"Gender","female":"Female","male":"Male","rtype":"Relation Type","child":"Child","ex":"Ex-Partner","parent":"Parent","partner":"Partner","bdate":"Birth Date","mdate":"Mariage Date","ddate":"Death Date","alive":"This person is alive","photo_url":"Enter Photo URL","photo":"Photo","choose":"Choose an image from your device","instead":"Or choose an avatar instead","website":"Website","tel":"Home Tel","mobile":"Mobile","bplace":"Birth Place","dplace":"Death Place","profession":"Profession","company":"Company","interests":"Interests","bio":"Bio Notes","photos":"Photos","lab1":"Enter first name","lab2":"Enter last name","lab3":"Enter Facebook","lab4":"Enter Twitter","lab5":"Enter Instagram","lab6":"Enter Email","lab7":"Enter Website","lab8":"Enter Home Tel","lab9":"Enter Mobile","lab10":"Enter Birth Place","lab11":"Enter Death Place","lab12":"Enter Profession","lab13":"Enter Company","lab14":"Enter Interests","lab15":"Enter Bio Notes","lab16":"Enter middle name","bornat":"Born at","bornin":"in","deadat":"Dead at","marriageat":"Marriage at"},"alerts":{"required":"All fields are required!","login":"You have login succesfully!","viewp":"View password is incorrect!","her_1":"you can't herirate this family beacause it isn't yours!","her_2":"you can't herirate a family twise in the same tree!","her_3":"you can't herirate this family beacause it isn't public!","her_4":"you can't herirate this family!","alldone":"Success, all done!","famexist":"This family is already exist!","name":"Name is required!","wrong":"something wrong!","correctemail":"You need a correct email address!","existemail":"This Email is already exist!","existusername":"This Username is already exist!","regsuccess":"Your have being registred succesfuly.","regsuccess1":"Your have being registred succesfuly, but we sent you an email for verification!","regsuccess2":"Your have being registred succesfuly, but need to be accepted by administration!","famsuccess":"Your family ID has created succesfully!","logsuccess":"You have login succesfully!","logapprov":"this user needs approval by administration before sign in!","logverif":"this user needs to verify by email address!","logerror":"Family ID or password is incorrect!","reseterror":"There is no user with this info!","resetsuccess":"The resset password sent succcesfuly.","pass1":"password more than 6 letters","pass2":"password don't match repassword","pass3":"you can login now with this new password","nodata":"No data found!","emailver":"All right, you can login now.","families":"Your number of families that you can add for the plan you have is expired, please upgrade your plan for more!","heritage":"You don't have permission to heritage using the plan you have, please upgrade your plan for more!","members":"Your number of members per family that you can add for the plan you have is expired, please upgrade your plan for more!","albums":"You don't have permission to add photos in albums using the plan you have, please upgrade your plan for more!","permission":"You have no permission for accessing to this page!","payment":"Payment success!","payment_f":"Failed to retrieve payment from PayPal!","logout":"Are you sure you want to logout?","nofile":"No file chosen...","de_mem":"Are you sure you want to delete this memebr?"},"dashboard":{"hello":"Hello,","welcome":"Welcome back again to your dashboard.","families":"Families","users":"Users","responses":"Members","questions":"Images","days":"Days","months":"Months","new_u":"New Users (24h)","latest_f":"Latest Families","latest_m":"Latest Members","save":"Save","p_disacticate":"Disable plans option","status":"Status","name":"name","public":"public","members":"members","moderators":"moderators","date":"Date","edit":"Edit","delete":"Delete","u_users":"Members","u_status":"Status","u_username":"Username","verification":"Verification","u_registred":"Registred at","u_updated":"Updated at","u_delete":"Delete User","u_edit":"Edit User","u_create":"Create a User","u_pages":"Pages","npage":"New Page","title":"Title","inmenu":"in Menu","created":"Created","p_title":"Payments","p_user":"User","u_plan":"Plan","p_amount":"Amount","p_paymentid":"Payment ID","p_payerid":"Payer ID","created_at":"Created At","set_title":"General Settings","set_stitle":"Site title:","set_keys":"Site keywords:","set_desc":"Site Description:","set_url":"Site URL:","regstatus":"Registration Status:","byemail":"By Email","mneedsapproval":"Need Approval Without Email","open":"Open","hidereg":"Hide registration form","fneedsapproval":"Families needs approval before being live","colors":"Colors","ptitle":"Page Title","picon":"Page Icon","pcontent":"Page Content","dmenu":"Display it in menu","stats_line_d":"Statistics for the last 7 days","stats_line_m":"Statistics for this year","planalert":"The plans have been saved successfully."}};</script>
+
+<!-- Main JS -->
+<script src="custom.js"></script>
+
+</body>
+</html>
